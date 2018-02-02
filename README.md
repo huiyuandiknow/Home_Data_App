@@ -6,4 +6,4 @@ Team members:
 
 - [Kristy Stienstra](https://github.com/KristyStien)
 - [Hui-yu (Laura) Yang](https://github.com/huiyuandiknow)
-- [Jak Ashuraliev] (https://github.com/jak-ashuraliev)
+- [Jak Ashuraliev](https://github.com/jak-ashuraliev)

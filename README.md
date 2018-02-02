@@ -4,5 +4,5 @@ This is a Web app that aggregates housing data to recommend wether to sell or re
 
 Team members: 
 
-[Kristy Stienstra](https://github.com/KristyStien)
-[Hui-yu (Laura) Yang](https://github.com/huiyuandiknow)
+- [Kristy Stienstra](https://github.com/KristyStien)
+- [Hui-yu (Laura) Yang](https://github.com/huiyuandiknow)

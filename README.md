@@ -1,2 +1,7 @@
 # Home_Data_App
-LaunchCode Project
+
+This is a Web app that aggregates housing data to recommend wether to sell or rent your house in the current real estate market.
+
+Team members: 
+
+[Kristy Stienstra](https://github.com/KristyStien)

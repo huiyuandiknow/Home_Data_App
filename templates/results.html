@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}}
+
+{% block body %}
+
+    <div class="">
+        <h1>Results</h1>
+
+        <ul class="list-group">
+            {% for result in results %}
+                <li class="list-group-item">{{ result.price }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/" class="btn btn-md btn-primary">Return</a>
+    </div>
+
+     
+{% endblock %}

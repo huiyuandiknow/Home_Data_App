@@ -3,32 +3,28 @@ from data import Results #Importing data from data.py
 
 app = Flask(__name__)
 
-#Store results function from data.py
-Results = Results()
-
 #For testing purposes, will be deleted later.
 app.debug = True
 
-address = ""
 # ====== ROUTES ====== ###
+
 
 # Index Page
 @app.route('/')
 def index():
     return render_template('home.html')
 
-@app.route('/', methods=['POST'])
-def form_index():
-    global address
+
+# Results Page
+@app.route('/results', methods=['GET', 'POST'])
+def results():
     address = request.form['address']
-    return render_template('results.html', res=address)
+    h_type = request.form['type']
+    beds = request.form['beds']
+    baths = request.form['baths']
+    res = Results(address, h_type, beds, baths)
+    return render_template('results.html', res=res)
 
-
-# # Results Page
-# @app.route('/results')
-# def results():
-#
-#     return render_template('results.html', res=address)
 
 # About Page
 @app.route('/about')

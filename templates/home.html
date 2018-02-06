@@ -6,20 +6,7 @@
      <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi eius incidunt pariatur expedita culpa qui! Ab incidunt magnam explicabo itaque, dolorum facere ducimus ad magni iure eveniet architecto commodi debitis.</p>
      <a href="/results" class="btn btn-lg btn-primary">Results</a>
 
-    <form action="/" method="post">
-{#        <table>
-           <tr>
-            <td> <label for="address">Address</label> </td>
-            <td> <input id="address" type="text" name="address" value={{address}}>
-           </td>
-           </tr>
-           <tr>
-            <td> <label for="hometype">Hometype</label> </td>
-            <td> <input id="hometype" type="textarea" name="hometype" value={{hometype}}>
-            </td>
-           </tr>
-        </table>#}
-
+    <form action="/results" method="post">
         <div class="form-group">
              <label for="address">Address</label>
              <input type="text" class="form-control" id="address" name="address">
@@ -29,10 +16,11 @@
         <div class="form-group">
             <div class="row">
             <label for="type">Type</label>
-            <select class="form-control" id="type">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
+            <select class="form-control" id="type" name="type">
+                <option>house</option>
+                <option>apartament</option>
+                <option>townhome</option>
+                <option>land</option>
             </select>
             </div>
         </div>
@@ -40,17 +28,20 @@
     <div class="col-sm-2">
         <div class="form-group">
             <label for="sel1">Bedrooms</label>
-            <select class="form-control" id="bedroom">
+            <select class="form-control" id="bedroom" name="beds">
+                <option>0</option>
                 <option>1</option>
                 <option>2</option>
-                <option>3</option>
+                <option>3</option>.
+                <option>4</option>
+                <option>5+</option>
             </select>
         </div>
     </div>
     <div class="col-sm-2">
         <div class="form-group">
             <label for="sel1">Bathrooms</label>
-            <select class="form-control" id="bathrooms">
+            <select class="form-control" id="bathrooms" name="baths">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>

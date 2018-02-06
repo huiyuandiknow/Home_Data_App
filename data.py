@@ -1,4 +1,6 @@
 #Fake data for testing
+# If received any existing address in our fake list --> result = the price in our fake data
+#  else a concatenated of inputted data will return
 def Results(address, h_type, beds, baths):
     fake_list = [
         {
@@ -18,11 +20,11 @@ def Results(address, h_type, beds, baths):
            
         }
     ]
-    price = ""
+    res = ""
     for el in fake_list:
         if el['address'] == address:
-            price = el['price']
-
-    res = (price+" "+address+" "+h_type+" "+beds+" "+ baths)
+            res = el['price']
+        else:
+            res = address+" " + h_type+" " + beds + " " + baths
 
     return res

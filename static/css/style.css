@@ -1,0 +1,194 @@
+:root{
+    --btn-bg-color-light: #855595;
+    --btn-hover-color: #A593E0;
+    --nav-bg-color: #3e3f57;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('/static/img/main-bg-image.jpeg') center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+
+/* ==================== NAVBAR ==================== */
+.my-navbar{
+    background: var(--nav-bg-color);
+    border: none;
+    border-radius: 0px;
+}
+
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:hover
+{
+    color: #b5b5b5;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+    color: #eee;
+}
+
+.navbar-brand .fa-home{
+    font-size: 20px;
+}
+
+/* ==================== HOME ==================== */
+  
+.search-wrapper{
+    width: 740px;
+    margin: 0 auto;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%)
+}
+
+.search-wrapper p{
+    color: #eee;
+}
+
+.search-wrapper h1{
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 
+    0px 4px 3px rgba(0, 0, 0, 0.4),
+    0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1); 
+}
+
+.search-bar input[type=text]{
+    width: 100%;
+    height: 48px;
+    margin-bottom: 8px;
+    border: 1px solid #d4d4d8;
+    border-radius: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+    color:#855595;
+    outline: none;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+    width: 180px;
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .filter-option,
+.bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text
+{
+    height: 30px;
+    padding: 5px 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    background: #A593E0;
+    color: #fff;
+    /* outline: none; */
+}
+
+.bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text{
+    background: transparent;
+    color: #888;
+}
+
+.btn-group>.btn:first-child{
+    background: #A593E0;
+}
+
+.btn-default,
+.btn-default:hover{
+    border-color: #d4d4d8;
+}
+
+.btn-group.open .dropdown-toggle{
+    box-shadow: none;
+    border: 1px solid #d4d4d8 !important;
+}
+
+.open>.dropdown-toggle.btn-default:focus, 
+.open>.dropdown-toggle.btn-default:hover{
+    background: #A593E0;
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .caret{
+    color: #eee;
+}
+
+.open>.dropdown-menu{
+    padding: 0;
+}
+.dropdown-menu>li>a{
+    padding: 4px 10px;
+}
+.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark{
+    margin-top: 10px;
+    color: #A593E0;
+}
+
+.bootstrap-select .btn:focus {
+    outline: none !important;
+}
+
+
+.search-btn input[type=submit]{
+    border: 1px solid #d4d4d8;
+    padding: 9px 20px 9px 20px;
+    border-radius: 4px;
+    width: 188px;
+    background: purple;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    position: absolute;
+    text-align: center;
+    top: 85%;
+    text-decoration: none;
+    outline: none;
+    right: 0px;
+}
+
+.search-btn input[type=submit]:hover{
+    background: #923292;
+    cursor: pointer;
+}
+
+/* ==================== ABOUT ==================== */
+
+
+
+
+
+
+/* ==================== FOOTER ==================== */
+
+footer{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    background: var(--nav-bg-color);
+    line-height: 40px;
+    color: #b5b5b5;
+}
+
+footer .fa-github{
+    font-size: 16px;
+    color: #A593E0;
+    cursor: pointer;
+}

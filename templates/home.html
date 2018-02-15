@@ -1,60 +1,46 @@
 {% extends 'layout.html' %}}
 
 {% block body %}
- <div class="jumbotron text-center">
-     <h1>Welcome to Home Estimate App</h1>
-     <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi eius incidunt pariatur expedita culpa qui! Ab incidunt magnam explicabo itaque, dolorum facere ducimus ad magni iure eveniet architecto commodi debitis.</p>
-{#     <a href="/results" class="btn btn-lg btn-primary">Results</a>#}
+<div class="search-wrapper">
 
+    <h1>The Best Estimate For<br>Your Home</h1>
+    <p class="lead text-center">Get an instant and accurate value of a home for sale.</p>
+            
     <form action="/results" method="post">
-        <div class="form-group">
-             <label for="address">Address</label>
-             <input type="text" class="form-control" id="address" name="address">
-       </div>
-        <div class="row">
-    <div class="col-sm-2">
-        <div class="form-group">
-            <div class="row">
-            <label for="type">Type</label>
-            <select class="form-control" id="type" name="type">
-                <option>house</option>
-                <option>apartament</option>
-                <option>townhome</option>
-                <option>land</option>
+
+            <div class="search-bar">
+                <input type="text" id="address" name="address" placeholder="Enter Your Address">
+            </div>            
+            
+            <select id="type" name="type" class="selectpicker show-tick drop-down-hm"  title="Home Type">
+                    <option>Apartment</option>
+                    <option>House</option>
+                    <option>Townhouse</option>
+                    <option>Land</option>
             </select>
+
+            <select id="bedrooms" name="beds" class="selectpicker show-tick"  title="Bedrooms">
+                    <option>Bed: 1</option>
+                    <option>Bed: 2</option>
+                    <option>Bed: 3</option>
+                    <option>Bed: 4</option>
+                    <option>Bed: 5+</option>
+            </select>
+
+            <select id="bathrooms" name="baths" class="selectpicker show-tick"  title="Bathrooms">
+                    <option>Bath: 1</option>
+                    <option>Bath: 2</option>
+                    <option>Bath: 3</option>
+                    <option>Bath: 4</option>
+            </select>
+                  
+            <div class="search-btn">
+                <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+                <input type="submit" value="Search">
             </div>
-        </div>
-    </div>
-    <div class="col-sm-2">
-        <div class="form-group">
-            <label for="sel1">Bedrooms</label>
-            <select class="form-control" id="bedroom" name="beds">
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>.
-                <option>4</option>
-                <option>5+</option>
-            </select>
-        </div>
-    </div>
-    <div class="col-sm-2">
-        <div class="form-group">
-            <label for="sel1">Bathrooms</label>
-            <select class="form-control" id="bathrooms" name="baths">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-            </select>
-        </div>
-    </div>
-        <div class="col-sm-2">
-        <div class="form-group">
-           <input type="submit" class="btn btn-lg btn-primary"/>
-        </div>
-    </div>
+
+    </form>
+
 </div>
 
-     </form>
- </div>
 {% endblock %}

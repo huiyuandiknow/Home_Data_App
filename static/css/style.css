@@ -11,9 +11,13 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
 body{
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
     url('/static/img/main-bg-image.jpeg') center;
+
+    /* background: url('/static/img/main-bg-image.jpeg') center; */
+
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -170,9 +174,77 @@ body{
 
 /* ==================== ABOUT ==================== */
 
+.section-about{
+    color: #eee;
+}
 
+/* ==================== RESULTS ==================== */
 
+.section-results{
+    color: #eee;
+    font-weight: 300;
+}
 
+.section-results .lead{
+    padding-top: 10px;
+}
+
+hr{
+    border-top: 1px solid #c7c7c7;
+}
+
+.section-results .text-results{
+    color: #3e3f57;
+    font-size: 18px;
+}
+
+.section-results .text-results ul{
+    list-style-type: none;
+}
+
+.section-results .text-results ul li{
+    font-size: 14px;
+}
+
+.section-results .text-results span.price{
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #855595;
+}
+
+.section-results .fa-dollar-sign{
+    font-size: 24px;
+    color: #855595;
+}
+
+.btn-return{
+    border: 1px solid #d4d4d8;
+    padding: 9px 20px 9px 20px;
+    border-radius: 4px;
+    background: #A593E0;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.section-results .btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.open>.dropdown-toggle.btn-primary {
+    color: #eee;
+    background-color: #855595;
+    border-color: #b5b5b5;
+}
+
+.section-results .well{
+    margin-bottom: 100px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
 
 
 /* ==================== FOOTER ==================== */
@@ -181,7 +253,8 @@ footer{
     position: absolute;
     width: 100%;
     height: 40px;
-    bottom: 0;
+    bottom: 0px;
+    left: 0px;
     background: var(--nav-bg-color);
     line-height: 40px;
     color: #b5b5b5;

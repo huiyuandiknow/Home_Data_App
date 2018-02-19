@@ -2,19 +2,39 @@
 
 {% block body %}
 
-    <div class="">
-        <h1>Results</h1>
+<div class="container section-results">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2">
+        
+            <h2>Results</h2>
+            <a href="/" class="btn btn-return btn-md btn-primary"><i class="fas fa-chevron-circle-left"></i> Return</a>
 
-{#        <ul class="list-group">
-            {% for result in results %}
-                <li class="list-group-item">{{ result.price }}</li>
-            {% endfor %}
-        </ul>#}
-        <p>
-            The value of your home is: {{res}}
-        </p>
-        <a href="/" class="btn btn-md btn-primary">Return</a>
-    </div>
+            <div class="well well-md">
 
-     
+        {#      <ul class="list-group">
+                    {% for result in results %}
+                        <li class="list-group-item">{{ result.price }}</li>
+                    {% endfor %}
+                </ul>
+        #}
+            <div class="text-results">
+                <p class="lead text-center text-uppercase">
+                    The value of your home is: <i class="fas fa-dollar-sign"></i> <span class="price"> {{res}} </span>
+                </p>
+                <hr>
+                <ul class="list-group">
+                    <li class="list-group-item">Address: <span>Yale Ave NE, Seattle, WA 98000</span></li>
+                    <li class="list-group-item">Property Type: <span>House</span></li>
+                    <li class="list-group-item">Number of Beds and Bath:</li>
+                    <li class="list-group-item text-center">View on Google Map</li>
+                    <li class="list-group-item text-center" id="map"></li>
+                </ul>
+            </div>
+        
+            </div><!-- /well -->
+
+        </div><!-- row -->
+    <div><!-- row -->
+</div><!-- /container -->
+
 {% endblock %}

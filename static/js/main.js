@@ -1,6 +1,5 @@
 $(function(){
-
-
+    
 
     $(function(){
         if (window.location.pathname == "/results") {

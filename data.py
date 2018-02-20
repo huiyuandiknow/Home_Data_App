@@ -66,14 +66,24 @@ def results(address, h_type, beds, baths):
         res = existing_address.price
     else:
         res = address + " " + h_type + " " + beds + " " + baths
-    res = model_rez('{"1":{"bedrooms":"3","bathrooms":"3","sqft_living":"1200","sqft_lot":"6000","zipcode":"98058"}}')
+    if beds == '':
+        beds = '2'
+    if beds == '5+':
+        beds = '5'
+    if baths == '':
+        baths = '1'
+    house = '{"1":{"bedrooms":'+'"'+beds+'"' +',"bathrooms":"' + baths +'","sqft_living":"1800","sqft_lot":"6000","zipcode":"98058"}}'
+    # res = model_rez('{"1":{"bedrooms":"3","bathrooms":"3","sqft_living":"1200","sqft_lot":"6000","zipcode":"98058"}}')
+    res = model_rez(house)
     # print (res)
     # print (res)
     return res
 
 def model_rez(home_data):
-    main_file_path = 'C:/Users/mikle/lc101/homeapp/data2/kc.csv'
-    data = pd.read_csv(main_file_path)
+    script_dir = os.path.dirname(__file__)  # <-- absolute dir the script is in
+    rel_path = 'kc.csv'
+    abs_file_path = os.path.join(script_dir, rel_path)
+    data = pd.read_csv(abs_file_path)
     y = data.price
     predictors = ['bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot']
     X = data[predictors]
@@ -84,10 +94,9 @@ def model_rez(home_data):
     mydata = pd.read_json(
         home_data,
         orient='index')
-    # print(mydata.head())
+
     test_X = mydata[predictors]
     predicted_prices = forest_model.predict(test_X)
-    # print(predicted_prices)
     return predicted_prices[0]
 
 

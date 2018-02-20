@@ -30,8 +30,8 @@ def index():
 def show_results():
     address = request.form['address']
     h_type = request.form['type']
-    beds = request.form['beds']
-    baths = request.form['baths']
+    beds = request.form['beds'].replace('Bed: ', '')
+    baths = request.form['baths'].replace('Bath: ', '')
     return render_template('results.html', res=results(address, h_type, beds, baths))
 
 

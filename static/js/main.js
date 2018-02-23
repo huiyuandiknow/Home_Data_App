@@ -14,6 +14,19 @@ $(function(){
             $("body").css("height", "100vh")
         }
     });
+    $(function(){
+        if (window.location.pathname == "/about") {
+
+            // On page load, set footer position to relative
+            // $("footer").css("position", "relative");
+            // On page load, set body height to 100%
+            $("body").css("height", "100%")
+            $("footer").hide();
+        } else {
+            // $("footer").css("position", "absolute");
+            $("body").css("height", "100vh")
+        }
+    });
 
 
 });
@@ -104,4 +117,44 @@ function initMap(){
     }
 
 }
+//==========================Randomize About Me Page=========================================
+var aboutMe = $(".about");
+for(var i = 0; i < aboutMe.length; i++){
+    var target = Math.floor(Math.random() * aboutMe.length -1) + 1;
+    var target2 = Math.floor(Math.random() * aboutMe.length -1) +1;
+    aboutMe.eq(target).before(aboutMe.eq(target2));
+}
+//=========================Zillow API/Results Page============================================
+//vars
+var result = document.getElementById("zest");
+var address = "2114+Bigelow+Ave";
+var city = "Seattle";
+var state = "WA";
 
+var apiUrl = "http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz18s18qx40ln_4vl2o&address="+address+"&citystatezip="+city+"%2C+" + state;
+
+//display result
+function displayResult(res){
+	result.innerHTML = "$ " + res;
+}
+$.ajax({
+    url: apiUrl,
+    crossDomain:true,
+    dataType: 'xml',
+    success: function(data){
+        $(data).find('zestimate').each(function(){
+            var amount = $(this).find('amount').text();
+            displayResult(amount);
+        });
+    },
+    error: function(){
+        $('.zillow_data').text('Failed to get feed');
+    }
+});
+
+//fetch API without CORS should display as {object}
+// var myInit = {mode : "no-cors"};
+// fetch(apiUrl, myInit)
+// 	.then(response => response.text())
+// 	.then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
+//     .then(data => displayResult(data));

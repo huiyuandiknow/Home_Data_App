@@ -1,4 +1,4 @@
-# Home_Data_App [https://hom-es.herokuapp.com](https://hom-es.herokuapp.com)
+# Home_Estime_App [https://home-estimate-app.herokuapp.com/](https://home-estimate-app.herokuapp.com/)
 
 This is a Web app that aggregates housing data to recommend wether to sell or rent your house in the current real estate market.
 

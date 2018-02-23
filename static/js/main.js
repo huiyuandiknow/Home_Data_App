@@ -1,7 +1,6 @@
 $(function(){
 
 
-
     $(function(){
         if (window.location.pathname == "/results") {
 
@@ -17,8 +16,35 @@ $(function(){
     });
 
 
-
 });
+
+
+// ZILLOW API
+
+$.ajax({
+    url: 'http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=X1-ZWz1g9apq54fm3_5upah&zpid=48749425',
+    dataType: 'xml',
+    success: function(data){
+        $(data).find('address').each(function(){
+            var street = $(this).find('street').text();
+            var zip = $(this).find('zipcode').text();
+            var city = $(this).find('city').text();
+            var state = $(this).find('state').text();
+            
+
+            $('.zillow_data ul').append('<li>' 
+            + street + '<br>'
+            + city + " " + state + " " + zip + '</li>');
+
+        });
+    },
+    error: function(){
+        $('.zillow_data').text('Failed to get feed');
+    }
+});
+
+
+
 
 
 // ============== GOOGLE MAP ============== //

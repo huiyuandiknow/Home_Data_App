@@ -78,7 +78,13 @@ function initMap(){
     }
 
 }
-
+//==========================Randomize About Me Page=========================================
+var aboutMe = $(".about");
+for(var i = 0; i < aboutMe.length; i++){
+    var target = Math.floor(Math.random() * aboutMe.length -1) + 1;
+    var target2 = Math.floor(Math.random() * aboutMe.length -1) +1;
+    aboutMe.eq(target).before(aboutMe.eq(target2));
+}
 //=========================Zillow API/Results Page============================================
 //vars
 var result = document.getElementById("zest");

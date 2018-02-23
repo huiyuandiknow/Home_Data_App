@@ -1,49 +1,70 @@
 {% extends 'layout.html' %}}
 
 {% block body %}
+    
 <div class="container section-about">
-<div class="row">
-<div class="tools col-xs-4 col-md-4">
+    <div class="text-center">
+        <h3>About</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
+    </div>
     <h3 class="text-center">Tools We Used</h3>
-    <ul class="list-unstyled">
-        <li>Python</li>
-        <li>Javascript</li>
-        <li>HTML/CSS</li>
-        <li>Bootstrap 3.3</li>
-        <li>Google Maps API</li>
-        <li>Zillow API</li>
-        <li>"add other things"</li>
-    </ul>
-</div>
- <div class="about col-xs-8 col-md-8 text-center">
-     <h3>About</h3>
-     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
- </div>
-</div>
+    <div class="row">
+    <div class="col-xs-2 col-md-3 text-center"><i class="fab fa-python fa-5x"></i></div>
+    <div class="col-xs-2 col-md-3 text-center"><i class="fab fa-js-square fa-5x"></i></div>
+    <div class="col-xs-2 col-md-3 text-center"><i class="fab fa-html5 fa-5x"></i></div>
+        Bootstrap 3.3<br>
+        Google Maps API<br>
+        Flask<br>
+    </div>
+       
 </div>
 
-<div class="container">
-    <div class="row">
+<div class="container section-about">
+    <div class="row about">
         <div class="col-xs-3 col-md-3">
+            <img src="https://avatars3.githubusercontent.com/u/13004262?s=460&v=4" class="img-responsive img-rounded" alt="Hui-yu (Laura) Yang"/>
+        </div>
+        <div class="col-xs-6 col-md-6">
+            <h3 class="text-right">Hui-yu (Laura) Yang</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
             <a href="https://github.com/huiyuandiknow" target="_blank">
-            <img src="https://avatars3.githubusercontent.com/u/13004262?s=460&v=4" class="img-responsive img-rounded" alt="Hui-yu (Laura) Yang"/></a>
-            <h3 class="text-center">Hui-yu (Laura) Yang</h3>
+            <i class="fab fa-github fa-3x"></i></a>
         </div>
-        <div class="col-xs-3 col-md-3">
+    </div>
+    <div class="row about">
+        <div class="col-xs-6 col-md-6">
+            <h3 class="text-left">Mikhail Gorbunov</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
             <a href="https://github.com/mikleg" target="_blank">
-            <img src="https://avatars0.githubusercontent.com/u/16841976?s=460&v=4" class="img-responsive img-rounded" alt="Mikhail Gorbunov"/></a>
-            <h3 class="text-center">Mikhail Gorbunov</h3>
+            <i class="fab fa-github fa-3x"></i></a>
         </div>
         <div class="col-xs-3 col-md-3">
-            <a href="https://github.com/jak-ashuraliev" target="_blank">            
-            <img src="https://avatars0.githubusercontent.com/u/26147765?s=460&v=4" class="img-responsive img-rounded" alt="Jak Ashuraliev"/> </a>          
-            <h3 class="text-center">Jak Ashuraliev</h3>
+            <img src="https://avatars0.githubusercontent.com/u/16841976?s=460&v=4" class="img-responsive img-rounded" alt="Mikhail Gorbunov"/>
         </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="https://github.com/KristyStien" target="_blank">            
-            <img src="https://avatars2.githubusercontent.com/u/30839938?s=460&v=4" class="img-responsive img-rounded" alt="Kristy Stienstra"/> </a>           
-            <h3 class="text-center">Kristy Stienstra</h3>
+        
+    </div>
+    <div class="row about">
+        <div class="col-xs-3 col-md-3">          
+            <img src="https://avatars0.githubusercontent.com/u/26147765?s=460&v=4" class="img-responsive img-rounded" alt="Jak Ashuraliev"/> 
         </div>
+        <div class="col-xs-6 col-md-6">
+            <h3 class="text-right">Jak Ashuraliev</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
+            <a href="https://github.com/jak-ashuraliev" target="_blank">  
+            <i class="fab fa-github fa-3x"></i></a>
+        </div>
+    </div>
+    <div class="row about">
+        <div class="col-xs-6 col-md-6">
+            <h3 class="text-left">Kristy Stienstra</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
+            <a href="https://github.com/KristyStien" target="_blank">  
+            <i class="fab fa-github fa-3x"></i></a>
+        </div>
+        <div class="col-xs-3 col-md-3">       
+            <img src="https://avatars2.githubusercontent.com/u/30839938?s=460&v=4" class="img-responsive img-rounded" alt="Kristy Stienstra"/>
+        </div>
+        
     </div>
 </div>
 

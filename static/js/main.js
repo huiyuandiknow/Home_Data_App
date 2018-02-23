@@ -22,7 +22,7 @@ $(function(){
 // ZILLOW API
 
 $.ajax({
-    url: 'http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=X1-ZWz1g9apq54fm3_5upah&zpid=48749425',
+    url: 'https://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=X1-ZWz1g9apq54fm3_5upah&zpid=48749425',
     dataType: 'xml',
     success: function(data){
         $(data).find('address').each(function(){

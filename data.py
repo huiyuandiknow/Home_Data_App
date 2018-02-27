@@ -57,10 +57,11 @@ def results(address, living, beds, baths, lot, year):
     if home_zip != '':
         if is_king_county(home_zip):
             if num(living) is not None:
-                liv = num(living)
+                liv = living
+
             else: liv = '1800'
             if num(lot) is not None:
-                lt = num(lot)
+                lt = lot
             else:
                 lt = '6000'
             house = '{"1":{"bedrooms":'+'"'+beds+'"' +',"bathrooms":"' + baths +'","sqft_living":"'+liv+'","sqft_lot":"'+lt+'","zipcode":"'+home_zip+'"}}'

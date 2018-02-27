@@ -23,9 +23,12 @@
                 </p>
                 <hr>
                 <ul class="list-group">
-                    <li class="list-group-item">Address: <span>Yale Ave NE, Seattle, WA 98000</span></li>
-                    <li class="list-group-item">Property Type: <span>House</span></li>
-                    <li class="list-group-item">Number of Beds and Bath:</li>
+                    <li class="list-group-item">Address: <span>{{address}}</span></li>
+{#                    <li class="list-group-item">Property Type: <span>{{test.bedrooms}}</span></li>#}
+                    <li class="list-group-item">Number of Beds: {{beds}} and Baths: {{baths}}</li>
+                    <li class="list-group-item">Area, lot: {{lot}} and Living: {{liv}}</li>
+                    <li class="list-group-item">Year {{year}}</li>
+                    <li class="list-group-item">Used zip: {{zipcode}} and Source: {{source}}</li>
                     <li class="list-group-item text-center">View on Google Map</li>
                     <li class="list-group-item text-center" id="map"></li>
                 </ul>

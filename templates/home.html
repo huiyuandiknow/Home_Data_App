@@ -12,27 +12,42 @@
                 <input type="text" id="address" name="address" placeholder="Enter Your Address">
             </div>            
             
-            <select id="type" name="type" class="selectpicker show-tick drop-down-hm"  title="Home Type">
+{#            <select id="type" name="type" class="selectpicker show-tick drop-down-hm"  title="Home Type">
                     <option>Condo</option>
                     <option>House</option>
                     <option>Townhouse</option>
                     <option>Land</option>
-            </select>
-
+            </select>#}
+            <div class="search-bar">
+                <input type="text" id="living" name="living" placeholder="Enter Your Living Area Square Footage">
+            </div>
+            <div class="search-bar">
+                <input type="text" id="lot" name="lot" placeholder="Enter Your Lot Area Square Footage">
+            </div>
             <select id="bedrooms" name="beds" class="selectpicker show-tick"  title="Bedrooms">
-                    <option>Bed: 1</option>
-                    <option>Bed: 2</option>
-                    <option>Bed: 3</option>
-                    <option>Bed: 4</option>
-                    <option>Bed: 5+</option>
+                    <option value="1">Bed: 1</option>
+                    <option value="2" selected>Bed: 2</option>
+                    <option value="3">Bed: 3</option>
+                    <option value="4">Bed: 4</option>
+                    <option value="5">Bed: 5+</option>
             </select>
 
             <select id="bathrooms" name="baths" class="selectpicker show-tick"  title="Bathrooms">
-                    <option>Bath: 1</option>
-                    <option>Bath: 2</option>
-                    <option>Bath: 3</option>
-                    <option>Bath: 4</option>
+                    <option value="1">Bath: 1</option>
+                    <option value="2" selected>Bath: 2</option>
+                    <option value="3">Bath: 3</option>
+                    <option value="4">Bath: 4</option>
             </select>
+
+            <select id="year" name="year" class="selectpicker show-tick"  title="Year">
+                    <option value="2013">Year built: 2013 and newer</option>
+                    <option value="2008" selected>Year built: 2008.. 2012</option>
+                    <option value="1998">Year built: 1998.. 2007</option>
+                    <option value="1978">Year built: 1978.. 1997</option>
+                    <option value="1958">Year built: 1958.. 1977</option>
+                    <option value="1938">Year built: 1957 and older</option>
+            </select>
+
                   
             <div class="search-btn">
                 <!-- <i class="fa fa-search" aria-hidden="true"></i> -->

@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from data import results #Importing the results function from data.py
-from test import zillow_api
 import usaddress
 import zillow
 

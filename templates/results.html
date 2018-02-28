@@ -1,11 +1,14 @@
 {% extends 'layout.html' %}}
 
 {% block body %}
-
 <div class="container section-results">
     <div class="row">
         <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2">
-        
+        <script type="text/javascript">
+            var zil = {{zil|tojson|safe}}
+            var zil_home = {{zil_home|tojson|safe}}
+        </script>
+
             <h2>Results</h2>
             <a href="/" class="btn btn-return btn-md btn-primary"><i class="fas fa-chevron-circle-left"></i> Return</a>
 
@@ -42,25 +45,28 @@
             </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
-            
+
 =======
 
-        
+
 >>>>>>> refs/remotes/origin/master
 =======
-            
 
-        
+
+
 >>>>>>> resultpg
-        
+
             </div><!-- /well -->
 
 
-           
+
 
 
 
         </div><!-- row -->
     <div><!-- row -->
 </div><!-- /container -->
+
+{#  <input type="hidden" value={{zil|tojson|safe}} id="zil" />#}
+{#  <input type="hidden" value={{flag}} id="flag" />#}
 {% endblock %}

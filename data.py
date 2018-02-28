@@ -11,6 +11,7 @@ from sklearn.model_selection import train_test_split
 import os
 import zillow
 import usaddress
+import json
 
 app = Flask(__name__)
 
@@ -54,6 +55,7 @@ def results(address, living, beds, baths, lot, year):
 
     res =''
     home_zip = address_zip_extract(address)
+    comps = []
     if home_zip != '':
         if is_king_county(home_zip):
             if num(living) is not None:
@@ -68,7 +70,10 @@ def results(address, living, beds, baths, lot, year):
             val = model_rez(house)
             res = {'val':val, "beds":beds, "baths":baths, "liv":liv, "lt":lt, "zipcode":home_zip}
         data = zillow_api(address)
-        result = {'zillow':data, 'model': res}
+        if not isinstance(data, str):
+            for el in data['comps']:
+                comps.append(el.get_dict())
+        result = {'zillow': data, 'model': res, 'comps': comps}
 
     else:
         result = ''
@@ -92,7 +97,7 @@ def model_rez(home_data):
 
     test_X = mydata[predictors]
     predicted_prices = forest_model.predict(test_X)
-    return predicted_prices[0]
+    return int(predicted_prices[0])
 
 def is_king_county(zip_code):
     zip =(98126,98133,98136,98134,98138,98144,98146,98148,98155,98154,98158,98164,98166,98168,98177,98178,98190,98188,

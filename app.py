@@ -39,23 +39,34 @@ def show_results():
     lot = request.form['lot']
     year = request.form['year']
     data = results(address, living, beds, baths, lot, year)
+    flag = False
+    zil = 'none'
+    zil_home = 'none'
+
     if not isinstance(data, str):
         if data['model'] != '':
+            if not isinstance(data['zillow'], str):
+                flag = True
+                zil_home = data['zillow']['principal'].get_dict()
+                zil = data['comps']
             return render_template('results.html', res=data['model']['val'], beds=data['model']['beds'],
                     baths=data['model']['baths'], source='model', address=address, lot=data['model']['lt'],
-                    liv=data['model']['liv'], zipcode=data['model']['zipcode'], year=1959)
+                    liv=data['model']['liv'], zipcode=data['model']['zipcode'], year=1959, flag=flag, zil=zil, zil_home=zil_home)
         elif not isinstance(data['zillow'], str):
-            zil = data['zillow']['principal']
-            res = zil.zestimate.amount
+            zil_home = data['zillow']['principal'].get_dict()
+            res = zil_home['zestimate']['amount']
             source = 'zillow'
-            beds = zil.extended_data.bedrooms
-            lot = zil.extended_data.lot_size_sqft
-            liv = zil.extended_data.finished_sqft
-            year = zil.extended_data.year_built
-            zipcode = zil.full_address.zipcode
+            beds = zil_home['extended_data']['bedrooms']
+            lot = zil_home['extended_data']['lot_size_sqft']
+            liv = zil_home['extended_data']['finished_sqft']
+            year = zil_home['extended_data']['year_built']
+            zipcode = zil_home['full_address']['zipcode']
+            flag = True
+
+            zil = data['comps']
             return render_template('results.html', res=res, beds=beds, baths=baths, source=source, address=address,
-               lot=lot, liv=liv, zipcode=zipcode, year=year)
-    return render_template('results.html', res='entered wrong data', beds=beds, baths=baths, source="None", address=address)
+               lot=lot, liv=liv, zipcode=zipcode, year=year, flag=flag, zil=zil, zil_home=zil_home)
+    return render_template('results.html', res='entered wrong data', beds=beds, baths=baths, source="None", address=address, flag=flag, zil=zil, zil_home=zil_home)
 
 
 # About Page

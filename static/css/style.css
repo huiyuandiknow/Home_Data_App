@@ -11,22 +11,43 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
+/* 
 body{
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-    url('/static/img/main-bg-image.jpeg') center;
-
-    /* background: url('/static/img/main-bg-image.jpeg') center; */
-
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('/static/img/bg-img1.jpeg') center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+  } */
+
+.bg-fader{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: -99;
   }
+
+.container-fluid,
+.row{
+    margin: 0;
+    padding: 0;
+}
+
 
 /* ==================== NAVBAR ==================== */
 .my-navbar{
     background: var(--nav-bg-color);
     border: none;
     border-radius: 0px;
+    z-index: 999;
+    text-align: center;
+    margin-bottom: 0;
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-default .navbar-nav>li>a,
@@ -41,6 +62,18 @@ body{
 }
 
 .navbar-brand .fa-home{
+    font-size: 34px;
+    color: #fff;
+    background: #a591e3;
+    padding: 14px 26px 34px 26px;
+    margin-top: -15px;
+}
+
+.navbar-brand .brand-title{
+    position: relative;
+    top: 20px;
+    left: -66px;
+    color: #fff;
     font-size: 20px;
 }
 
@@ -52,7 +85,7 @@ body{
     position: absolute;
     top: 25%;
     left: 50%;
-    transform: translate(-50%)
+    transform: translateX(-50%);
 }
 
 .search-wrapper p{
@@ -71,12 +104,20 @@ body{
     0px 4px 3px rgba(0, 0, 0, 0.4),
     0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 23px rgba(0, 0, 0, 0.1); 
+    -webkit-text-shadow: 
+    0px 4px 3px rgba(0, 0, 0, 0.4),
+    0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1); 
+    -moz-text-shadow: 
+    0px 4px 3px rgba(0, 0, 0, 0.4),
+    0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1); 
 }
 
 .search-bar input[type=text]{
     width: 100%;
     height: 48px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     border: 1px solid #d4d4d8;
     border-radius: 4px;
     padding-left: 20px;
@@ -150,7 +191,7 @@ body{
 
 .search-btn input[type=submit]{
     border: 1px solid #d4d4d8;
-    padding: 9px 20px 9px 20px;
+    padding: 8px 20px 9px 20px;
     border-radius: 4px;
     width: 188px;
     background: purple;
@@ -271,14 +312,27 @@ body{
     footer span{
         display: none;
     }
+    .navbar-brand .fa-home {
+        font-size: 22px;
+        color: #fff;
+        background: none;
+        padding: 14px 48px 15px 14px;
+    }
+    .navbar-brand .brand-title {
+        position: relative;
+        top: 2px;
+        left: -46px;
+        color: #fff;
+        font-size: 24px;
+    }
+
 }
 
 
 /* ==================== ABOUT ==================== */
 
-.section-about{
-    color: #eee;
-}
+
+
 
 /* ==================== RESULTS ==================== */
 
@@ -330,7 +384,8 @@ hr{
     border-radius: 4px;
     background: #A593E0;
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 70px;
 }
 
 .section-results .btn-primary:hover, 
@@ -343,8 +398,14 @@ hr{
     border-color: #b5b5b5;
 }
 
+
 .section-results .well{
     margin-bottom: 100px;
+    border: 1px solid #ddd;
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 #map {
@@ -356,7 +417,7 @@ hr{
 /* ==================== FOOTER ==================== */
 
 footer{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 40px;
     bottom: 0px;
@@ -364,6 +425,7 @@ footer{
     background: var(--nav-bg-color);
     line-height: 40px;
     color: #b5b5b5;
+    margin-top: -50px;
 }
 
 footer .fa-github{

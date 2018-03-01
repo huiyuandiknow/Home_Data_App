@@ -12,36 +12,32 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
-    
-
-
 </head>
 <body>
+
+
     <!-- Include navbar on all pages -->
     {% include 'includes/_navbar.html' %} 
 
-    <div class="container">
+
+    <div class="container-fluid">
         {% block body %}
+
 
         {% endblock %}
     </div>
+
 
     <!-- Include Footer on all pages -->
     {% include 'includes/_footer.html' %}
 
 
-
-   
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-
     <!-- Google Maps API & Key -->
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ5jFVTyuG7pmB8yCUY7nHnq7a7gOjmj8&callback=initMap">
     </script>
-
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
      

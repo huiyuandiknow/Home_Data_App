@@ -1,32 +1,40 @@
 $(function(){
 
+    // Change backgroung images
+    var count = 0;
+    var bgImages = ['/static/img/bg-img1.jpg',
+                    '/static/img/bg-img2.jpg', 
+                    '/static/img/bg-img3.jpg'];
+    var bgImg = $(".bg-fader");
 
-    $(function(){
-        if (window.location.pathname == "/results") {
-
-            // On page load, set footer position to relative
-            // $("footer").css("position", "relative");
-            // On page load, set body height to 100%
-            $("body").css("height", "100%")
-            $("footer").hide();
-        } else {
-            // $("footer").css("position", "absolute");
-            $("body").css("height", "100vh")
+    bgImg.css("background-image", "url(" + bgImages[1] + ")");
+    $('.bg-fader').css('background-size', 'cover');
+    $('.bg-fader').css('background-position', 'center');
+    $('.bg-fader').css('background-repeat', 'no-repeat');
+    
+    setInterval(function(){
+        bgImg.fadeOut(2000, function(){
+            bgImg.css("background-image", "url(" + bgImages[count++] + ")");
+            bgImg.fadeIn(1000);
+        });
+        if (count == bgImages.length){
+            count = 0;
         }
-    });
-    $(function(){
-        if (window.location.pathname == "/about") {
+    }, 20000);
 
-            // On page load, set footer position to relative
-            // $("footer").css("position", "relative");
-            // On page load, set body height to 100%
-            $("body").css("height", "100%")
-            $("footer").hide();
-        } else {
-            // $("footer").css("position", "absolute");
-            $("body").css("height", "100vh")
-        }
-    });
+
+
+    // $(function(){
+    //     if (window.location.pathname == "/results" || window.location.pathname == "/about") {
+    //         // On page load, set body height to 100%
+    //         $("body").css("height", "100%")
+    //         // Hide footer on results page
+    //         // $("footer").hide();
+    //     } else {
+    //         // $("footer").css("position", "absolute");
+    //         $("body").css("height", "100vh")
+    //     }
+    // });
 
 
 });
@@ -58,8 +66,6 @@ $.ajax({
 
 
 
-
-
 // ============== GOOGLE MAP ============== //
 
 function initMap(){
@@ -72,7 +78,6 @@ function initMap(){
     
     // New map
     var map = new google.maps.Map(document.getElementById('map'), options);
-
 
 
     // Hard coded markers

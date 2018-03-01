@@ -210,7 +210,14 @@ function setMarker()  {
 
 }
 
+//==========================twitter Button events=========================
+var tweet = document.getElementById("tweet");
+var toTweet = "My home estimate is $" + 1000;
 
+tweet.addEventListener("click", function () {
+    var twitRL = "https://twitter.com/intent/tweet?text=" + toTweet;
+   window.open(twitRL);
+ });
 
 //==========================Randomize About Me Page=========================================
 var aboutMe = $(".about");

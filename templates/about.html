@@ -1,14 +1,14 @@
 {% extends 'layout.html' %}}
 
 {% block body %}
-    
+
 <div class="container section-about">
     <div class="text-center">
         <h3>About</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
     </div>
     <h3 class="text-center">Tools We Used</h3>
-    <div class="row">
+    <div class="row about-icons">
     <div class="col-xs-2 col-md-3 text-center"><i class="fab fa-python fa-5x"></i></div>
     <div class="col-xs-2 col-md-3 text-center"><i class="fab fa-js-square fa-5x"></i></div>
     <div class="col-xs-2 col-md-3 text-center"><i class="fab fa-html5 fa-5x"></i></div>
@@ -19,12 +19,13 @@
        
 </div>
 
-<div class="container section-about">
-    <div class="row about">
+<div class="container section-about me-section center-block">
+    <div class="row about center-block">
+        <div class="col-xs-1 col-md-1"> </div>
         <div class="col-xs-3 col-md-3">
             <img src="https://avatars3.githubusercontent.com/u/13004262?s=460&v=4" class="img-responsive img-rounded" alt="Hui-yu (Laura) Yang"/>
         </div>
-        <div class="col-xs-6 col-md-6">
+        <div class="col-xs-6 col-md-6 about-content">
             <h3 class="text-right">Hui-yu (Laura) Yang</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
             <a href="https://github.com/huiyuandiknow" target="_blank">
@@ -32,7 +33,8 @@
         </div>
     </div>
     <div class="row about">
-        <div class="col-xs-6 col-md-6">
+            <div class="col-xs-1 col-md-1"> </div>
+        <div class="col-xs-6 col-md-6 about-content">
             <h3 class="text-left">Mikhail Gorbunov</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
             <a href="https://github.com/mikleg" target="_blank">
@@ -44,10 +46,11 @@
         
     </div>
     <div class="row about">
+            <div class="col-xs-1 col-md-1"> </div>
         <div class="col-xs-3 col-md-3">          
             <img src="https://avatars0.githubusercontent.com/u/26147765?s=460&v=4" class="img-responsive img-rounded" alt="Jak Ashuraliev"/> 
         </div>
-        <div class="col-xs-6 col-md-6">
+        <div class="col-xs-6 col-md-6 about-content">
             <h3 class="text-right">Jak Ashuraliev</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
             <a href="https://github.com/jak-ashuraliev" target="_blank">  
@@ -55,7 +58,8 @@
         </div>
     </div>
     <div class="row about">
-        <div class="col-xs-6 col-md-6">
+        <div class="col-xs-1 col-md-1"> </div>
+        <div class="col-xs-6 col-md-6 about-content">
             <h3 class="text-left">Kristy Stienstra</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
             <a href="https://github.com/KristyStien" target="_blank">  
@@ -67,5 +71,14 @@
         
     </div>
 </div>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    var aboutMe = $(".about");
+for(var i = 0; i < aboutMe.length; i++){
+    var target = Math.floor(Math.random() * aboutMe.length -1) + 1;
+    var target2 = Math.floor(Math.random() * aboutMe.length -1) +1;
+    aboutMe.eq(target).before(aboutMe.eq(target2));
+}
+</script> -->
 
 {% endblock %}

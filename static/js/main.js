@@ -212,8 +212,6 @@ function setMarker()  {
 
 
 
-
-
 //==========================Randomize About Me Page=========================================
 var aboutMe = $(".about");
 for(var i = 0; i < aboutMe.length; i++){
@@ -221,6 +219,7 @@ for(var i = 0; i < aboutMe.length; i++){
     var target2 = Math.floor(Math.random() * aboutMe.length -1) +1;
     aboutMe.eq(target).before(aboutMe.eq(target2));
 }
+alert("connected");
 //=========================Zillow API/Results Page============================================
 //vars
 var result = document.getElementById("zest");

@@ -31,6 +31,8 @@
                     The value of your home is: <i class="fas fa-dollar-sign"></i> <span class="price"> {{res}} </span>
                 </p>
                 <p>Compare to Zillow's Zestimate: <span id="zest"></span></p>
+                <button id ="tweet"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></button>
+                <p>This is Zillow's Zestimate: <span id="zest"></span></p>
                 <hr>
                 <ul class="list-group">
                     <li class="list-group-item">Address: <span>{{address}}</span></li>
@@ -49,7 +51,15 @@
                 </div>
 
             </div>
-        
+
+            <!-- <script>var tweet = document.getElementById("tweet");
+                var toTweet = "My home estimate is $" + 1000;
+                
+                tweet.addEventListener("click", function () {
+                    var twitRL = "https://twitter.com/intent/tweet?text=" + toTweet;
+                   window.open(twitRL);
+                 });</script> -->
+
             </div><!-- /well -->
 
             </div><!-- /well -->

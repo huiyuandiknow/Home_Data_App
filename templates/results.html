@@ -5,18 +5,18 @@
     <div class="row">
         <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2">
         <script type="text/javascript">
-            var zil = {{zil|tojson|safe}}
-            var zil_home = {{zil_home|tojson|safe}}
+            var zil = {{zil|tojson|safe}};
+            var zil_home = {{zil_home|tojson|safe}};
         </script>
 
             <h2>Results</h2>
             <a href="/" class="btn btn-return btn-md btn-primary"><i class="fas fa-chevron-circle-left"></i> Return</a>
 
-            <!-- <div class="">
+            <div class="display-value">
                 <p class="lead text-center text-uppercase">
                     The value of your home is: <i class="fas fa-dollar-sign"></i> <span class="price"> {{res}} </span>
                 </p>
-            </div> -->
+            </div>
 
             <div class="well well-md">
 
@@ -27,9 +27,9 @@
                 </ul>
         #}
             <div class="text-results">
-                <p class="lead text-center text-uppercase">
+                <!-- <p class="lead text-center text-uppercase">
                     The value of your home is: <i class="fas fa-dollar-sign"></i> <span class="price"> {{res}} </span>
-                </p>
+                </p> -->
                 <p>Compare to Zillow's Zestimate: <span id="zest"></span></p>
                 <button id ="tweet"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></button>
                 <p>This is Zillow's Zestimate: <span id="zest"></span></p>

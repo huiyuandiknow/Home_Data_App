@@ -1,11 +1,15 @@
 {% extends 'layout.html' %}}
 
 {% block body %}
-
 <div class="container section-results">
     <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2">
+        <script type="text/javascript">
+            var zil = {{zil|tojson|safe}}
+            var zil_home = {{zil_home|tojson|safe}}
+        </script>
 
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h2>Results</h2>
             <a href="/" class="btn btn-return btn-md btn-primary"><i class="fas fa-chevron-circle-left"></i> Return</a>
 
             <!-- <div class="">
@@ -29,9 +33,12 @@
                 <p>Compare to Zillow's Zestimate: <span id="zest"></span></p>
                 <hr>
                 <ul class="list-group">
-                    <li class="list-group-item">Address: <span>Yale Ave NE, Seattle, WA 98000</span></li>
-                    <li class="list-group-item">Property Type: <span>House</span></li>
-                    <li class="list-group-item">Number of Beds and Bath:</li>
+                    <li class="list-group-item">Address: <span>{{address}}</span></li>
+{#                    <li class="list-group-item">Property Type: <span>{{test.bedrooms}}</span></li>#}
+                    <li class="list-group-item">Number of Beds: {{beds}} and Baths: {{baths}}</li>
+                    <li class="list-group-item">Area, lot: {{lot}} and Living: {{liv}}</li>
+                    <li class="list-group-item">Year {{year}}</li>
+                    <li class="list-group-item">Used zip: {{zipcode}} and Source: {{source}}</li>
                     <li class="list-group-item text-center">View on Google Map</li>
                     <li class="list-group-item text-center" id="map"></li>
                 </ul>
@@ -45,10 +52,14 @@
         
             </div><!-- /well -->
 
+            </div><!-- /well -->
 
         </div><!-- row -->
     <div><!-- row -->
 </div><!-- /container -->
 
+
+{#  <input type="hidden" value={{zil|tojson|safe}} id="zil" />#}
+{#  <input type="hidden" value={{flag}} id="flag" />#}
 
 {% endblock %}

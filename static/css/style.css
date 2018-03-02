@@ -201,7 +201,7 @@ body{
     font-size: 18px;
     position: absolute;
     text-align: center;
-    top: 85%;
+    top: 89%;
     text-decoration: none;
     outline: none;
     right: 0px;
@@ -331,8 +331,29 @@ body{
 
 /* ==================== ABOUT ==================== */
 
+.section-about{
+    color: #eee;
+}
 
+.me-section{
+    width: 80%;
+}
 
+.about-icons{
+    margin: 10px;
+    padding: 10px;
+}
+
+.about{
+    padding: 10px;
+    width: 100%;
+}
+
+.about-content{
+    height: 35%;
+    background-color: #3e3f5762;
+    border-radius: 5px;
+}
 
 /* ==================== RESULTS ==================== */
 

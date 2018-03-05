@@ -52,7 +52,7 @@ def show_results():
                 zil = data['comps']
             return render_template('results.html', res=data['model']['val'], beds=data['model']['beds'],
                     baths=data['model']['baths'], source='model', address=address, lot=data['model']['lt'],
-                    liv=data['model']['liv'], zipcode=data['model']['zipcode'], year=1959, flag=flag, zil=zil, zil_home=zil_home)
+                    liv=data['model']['liv'], zipcode=data['model']['zipcode'], year=data['model']['year'], flag=flag, zil=zil, zil_home=zil_home)
         elif not isinstance(data['zillow'], str):
             zil_home = data['zillow']['principal'].get_dict()
             res = zil_home['zestimate']['amount']

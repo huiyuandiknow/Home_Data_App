@@ -1,17 +1,9 @@
-#Fake data for testing
-# If received any existing address in our fake list --> result = the price in our fake data
-#  else a concatenated of inputted data will return
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-import pandas as pd
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import train_test_split
 import os
 import zillow
 import usaddress
-import json
+from model import main_model
 
 app = Flask(__name__)
 
@@ -66,9 +58,15 @@ def results(address, living, beds, baths, lot, year):
                 lt = lot
             else:
                 lt = '6000'
-            house = '{"1":{"bedrooms":'+'"'+beds+'"' +',"bathrooms":"' + baths +'","sqft_living":"'+liv+'","sqft_lot":"'+lt+'","zipcode":"'+home_zip+'"}}'
-            val = model_rez(house)
-            res = {'val':val, "beds":beds, "baths":baths, "liv":liv, "lt":lt, "zipcode":home_zip}
+            if num(year) is not None:
+                ye = year
+            else:
+                ye = '1959'
+            house = '{"1":{"bedrooms":' + '"'+beds+'"' + ',"bathrooms":"' + baths + '","sqft_living":"'+liv + \
+                    '","sqft_lot":"' + lt +'","zipcode":"' + home_zip+'"}}'
+            #val = model_rez(house)
+            val = main_model(int(home_zip), int(liv), int(beds), int(baths), int(lt),int(ye))
+            res = {'val':val, "beds":beds, "baths":baths, "liv":liv, "lt":lt, "zipcode":home_zip, "year":ye}
         data = zillow_api(address)
         if not isinstance(data, str):
             for el in data['comps']:
@@ -78,26 +76,6 @@ def results(address, living, beds, baths, lot, year):
     else:
         result = ''
     return result
-
-def model_rez(home_data):
-    script_dir = os.path.dirname(__file__)  # <-- absolute dir the script is in
-    rel_path = 'kc.csv'
-    abs_file_path = os.path.join(script_dir, rel_path)
-    data = pd.read_csv(abs_file_path)
-    y = data.price
-    predictors = ['bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot']
-    X = data[predictors]
-    train_X, val_X, train_y, val_y = train_test_split(X, y, random_state=0)
-
-    forest_model = RandomForestRegressor(random_state=100)
-    forest_model.fit(train_X, train_y)
-    mydata = pd.read_json(
-        home_data,
-        orient='index')
-
-    test_X = mydata[predictors]
-    predicted_prices = forest_model.predict(test_X)
-    return int(predicted_prices[0])
 
 def is_king_county(zip_code):
     zip =(98126,98133,98136,98134,98138,98144,98146,98148,98155,98154,98158,98164,98166,98168,98177,98178,98190,98188,

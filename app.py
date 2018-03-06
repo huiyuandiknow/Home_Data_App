@@ -39,6 +39,8 @@ def show_results():
     living = request.form['living']
     lot = request.form['lot']
     year = request.form['year']
+    if len(address) > 512:
+        address = 'wrong data'
     data = results(address, living, beds, baths, lot, year)
     flag = False
     zil = 'none'

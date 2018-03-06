@@ -111,7 +111,13 @@ def zillow_api(address):
     data = api.GetDeepSearchResults(key, address, zip_code)
     if not isinstance(data, str):
         full_data = api.GetDeepComps(key, data.zpid)
-        full_data['principal'].extended_data = data.extended_data
+        if not isinstance(full_data, str):
+            full_data['principal'].extended_data = data.extended_data
+        else:
+            full_data = {
+                'principal': data,
+                'comps': [data]
+            }
         return full_data
     else:
         return "Wrong address"

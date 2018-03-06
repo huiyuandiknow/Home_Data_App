@@ -52,7 +52,7 @@ def main_model(h_zip, living, beds, baths, lot, year):
     #print(dtest_predictions)
     #print(xgb2.predict(my_data2[predictors]))
 
-    return xgb2.predict(my_data2[predictors])
+    return xgb2.predict(my_data2[predictors])[0]
 
 
 def model_rez(home_data):
@@ -73,4 +73,5 @@ def model_rez(home_data):
 
     test_X = mydata[predictors]
     predicted_prices = forest_model.predict(test_X)
+    print(int(predicted_prices[0]))
     return int(predicted_prices[0])

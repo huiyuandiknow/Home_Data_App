@@ -1,10 +1,12 @@
 # Import libraries:
-import pandas as pd
-from xgboost import XGBRegressor
-from sklearn import cross_validation, metrics  # Additional scklearn functions
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestRegressor
 import os
+
+import pandas as pd
+from sklearn import metrics  # Additional scklearn functions
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import train_test_split
+from xgboost import XGBRegressor
+
 
 def main_model(h_zip, living, beds, baths, lot, year):
     script_dir = os.path.dirname(__file__)  # <-- absolute dir the script is in
@@ -51,7 +53,6 @@ def main_model(h_zip, living, beds, baths, lot, year):
     #print(y_test.head())
     #print(dtest_predictions)
     #print(xgb2.predict(my_data2[predictors]))
-
     return xgb2.predict(my_data2[predictors])[0]
 
 
@@ -70,7 +71,6 @@ def model_rez(home_data):
     mydata = pd.read_json(
         home_data,
         orient='index')
-
     test_X = mydata[predictors]
     predicted_prices = forest_model.predict(test_X)
     print(int(predicted_prices[0]))

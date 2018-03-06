@@ -1,22 +1,9 @@
-from flask import Flask, render_template, request
-from flask_sqlalchemy import SQLAlchemy
-from data import results #Importing the results function from data.py
-import usaddress
-import zillow
+from flask import render_template, request
 
+from data_handling import results
+from flask_config import get_app
 
-
-app = Flask(__name__)
-
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://user2db2:123456@67.215.253.70:3306/user2db2'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://user1db1:123456@67.215.253.70:3306/user1db1'
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://user1db1:123456@localhost:8889/user1db1'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_ECHO'] = True
-db = SQLAlchemy(app)
-#For testing purposes, will be deleted later.
-app.debug = True
-
+app = get_app()
 # ====== ROUTES ====== ###
 
 

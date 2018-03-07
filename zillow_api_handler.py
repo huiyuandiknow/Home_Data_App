@@ -1,6 +1,6 @@
 import zillow
 from address_handling import Address
-from helper import dec, enc
+from helper import dec
 
 
 def zillow_api(address):

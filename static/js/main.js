@@ -216,8 +216,9 @@ function setMarker()  {
 }
 
 //==========================twitter Button events=========================
+var home_val = res;
 var tweet = document.getElementById("tweet");
-var toTweet = "My home estimate is $" + 1000 + " Find yours at hom-es.herokuapp.com";
+var toTweet = "My home estimate is $" + home_val + " Find yours at https://hom-es.herokuapp.com/";
 
 tweet.addEventListener("click", function () {
     var twitRL = "https://twitter.com/intent/tweet?text=" + toTweet;

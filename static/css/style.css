@@ -83,7 +83,7 @@ body{
     width: 740px;
     margin: 0 auto;
     position: absolute;
-    top: 25%;
+    top: 22%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -97,7 +97,7 @@ body{
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 60px;
+    font-size: 66px;
     line-height: 1;
     margin-bottom: 10px;
     text-shadow: 
@@ -127,6 +127,20 @@ body{
     font-size: 18px;
     color:#855595;
     outline: none;
+}
+
+.input-liv{
+    width: 49.2%;
+    float: left;
+    margin-bottom: 1px;
+}
+
+.input-lot {
+    float: left;
+    position: relative;
+    width: 50.2%;
+    margin-left: 4px;
+    margin-bottom: 1px;
 }
 
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
@@ -191,7 +205,7 @@ body{
 
 .search-btn input[type=submit]{
     border: 1px solid #d4d4d8;
-    padding: 8px 20px 9px 20px;
+    padding: 9px 20px 9px 20px;
     border-radius: 4px;
     width: 188px;
     background: purple;
@@ -201,7 +215,7 @@ body{
     font-size: 18px;
     position: absolute;
     text-align: center;
-    top: 89%;
+    top: 87.5%;
     text-decoration: none;
     outline: none;
     right: 0px;
@@ -221,6 +235,7 @@ body{
     }
     .search-wrapper{
         width: 530px;
+        top: 20%;
     }
     .search-bar input[type=text]{
         margin-bottom: 4px;
@@ -244,6 +259,13 @@ body{
         height: 26px;
         padding: 4px 6px;
     }
+    .input-liv{
+        width: 49%;
+    }
+    
+    .input-lot {
+        width: 50%;
+    }
 }
 
 @media screen and (max-width: 560px ){
@@ -253,6 +275,7 @@ body{
     }
     .search-wrapper{
         width: 460px;
+        top: 10%;
     }
     .search-bar input[type=text]{
         margin-bottom: 4px;
@@ -291,23 +314,39 @@ body{
     .search-wrapper h1{
         font-size: 32px;
     }
+    h1 br{
+        display: none;
+    }
     .search-wrapper{
         width: 340px;
-        top: 16%;
+        top: 12%;
+        margin-bottom: 65px;
     }
     footer span{
         display: none;
+    }
+    .input-liv{
+        width: 100%;
+    }
+    
+    .input-lot {
+        width: 100%;
+        margin-left: 0px;
+    }
+    .dropdown-menu>li>a {
+        padding: 2px 0px 2px 18px;
+        text-align: left;
     }
 }
 
 @media screen and (max-width: 375px ){
 
     .search-wrapper h1{
-        font-size: 40px;
+        font-size: 30px;
     }
     .search-wrapper{
-        width: 300px;
-        top: 12%;
+        width: 280px;
+        top: 10%;
     }
     footer span{
         display: none;
@@ -324,6 +363,17 @@ body{
         left: -46px;
         color: #fff;
         font-size: 24px;
+    }
+    .input-liv{
+        width: 100%;
+    }
+    .input-lot {
+        width: 100%;
+        margin-left: 0px;
+    }
+    .dropdown-menu>li>a {
+        padding: 2px 0px 2px 18px;
+        text-align: left;
     }
 
 }
@@ -357,9 +407,27 @@ body{
 
 /* ==================== RESULTS ==================== */
 
+.container-fluid .page-bg{
+    background: url('/static/img/results-bg.jpg') top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.section-results .display-value {
+    margin-top: 20%;
+    margin-bottom: 20px;
+    padding: 0px 10px 15px 10px;
+    color: #3e3f57;
+    background: #c4da81;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    --moz--box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    --webkit--box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
 .section-results{
     color: #eee;
     font-weight: 300;
+    background: #d4d0d1;
 }
 
 .section-results h2{
@@ -367,7 +435,8 @@ body{
 }
 
 .section-results .lead{
-    padding-top: 10px;
+    font-size: 26px;
+    /* margin-bottom: 0px; */
 }
 
 hr{
@@ -394,9 +463,9 @@ hr{
     color: #855595;
 }
 
-.section-results .fa-dollar-sign{
-    font-size: 24px;
-    color: #855595;
+.section-results .fa-dollar-sign {
+    font-size: 26px;
+    color: #3e3e57;
 }
 
 .btn-return{
@@ -405,8 +474,9 @@ hr{
     border-radius: 4px;
     background: #A593E0;
     color: white;
-    margin-bottom: 20px;
-    margin-top: 70px;
+    position: relative;
+    top: -60px;
+    left: -11px;
 }
 
 .section-results .btn-primary:hover, 

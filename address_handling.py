@@ -19,7 +19,7 @@ class Address:
                     self.zip_code = int(val)
                     self.zip_good = True
                     self.zip_extracted = True
-                    if len(addr[1]) > 2:
+                    if addr[1] is not 'Ambiguous':
                         self.address_good = True
                     break
 

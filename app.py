@@ -36,6 +36,9 @@ def show_results():
     if data.has_zillow:
         zil_home = data.zillow
         zil = data.comps
+    else:
+        zil_home = None
+        zil = None
     return render_template('results.html', res=data.val, beds=data.beds,
                            baths=data.baths, source=source, address=address, lot=data.lot,
                            liv=data.living, zipcode=data.home_zip, year=data.year, zil=zil, zil_home=zil_home)

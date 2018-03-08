@@ -71,7 +71,7 @@ var obj = zil;
 var lat =47.6062;
 var lng =-122.3321;
 var zilh=zil_home;
-    if (zil_home != 'none'){
+    if (zil_home != null){
        lat=parseFloat(zilh.full_address.latitude);
        lng=parseFloat(zilh.full_address.longitude);
     }
@@ -88,8 +88,12 @@ function initMap(){
     // New map
     var map = new google.maps.Map(document.getElementById('map'), options);
     var markers = [];
-    setMarkers();
-    setMarker();
+    if (zil_home != null && zil != null ){
+       setMarkers();
+       setMarker();
+    }
+
+
 
 
         function setMarkers()  {

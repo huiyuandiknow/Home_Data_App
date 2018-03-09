@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 #from xgboost import XGBRegressor
 try:
-    from xgboost import XGBRegressor
+    from xgboost2 import XGBRegressor2
 except ImportError:
     def main_model(h_zip, living, beds, baths, lot, year):
         script_dir = os.path.dirname(__file__)  # <-- absolute dir the script is in

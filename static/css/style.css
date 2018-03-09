@@ -226,6 +226,151 @@ body{
     cursor: pointer;
 }
 
+/* ==================== ABOUT ==================== */
+
+.section-about{
+    color: #eee;
+}
+
+.me-section{
+    width: 80%;
+}
+
+.about-icons{
+    margin: 10px;
+    padding: 10px;
+}
+
+.about{
+    padding: 10px;
+    width: 100%;
+}
+
+.about-content{
+    height: 35%;
+    background-color: #3e3f5762;
+    border-radius: 5px;
+}
+
+/* ==================== RESULTS ==================== */
+
+.container-fluid .page-bg{
+    background: url('/static/img/results-bg.jpg') top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.section-results .display-value {
+    margin-top: 20%;
+    margin-bottom: 20px;
+    padding: 0px 10px 15px 10px;
+    color: #fff;
+    background: #3e3e57;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    --moz--box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    --webkit--box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.section-results{
+    color: #eee;
+    font-weight: 300;
+    background: #e8e3dd;
+}
+
+.section-results h2{
+    margin-top: 0px;
+}
+
+.section-results .lead{
+    font-size: 26px;
+}
+
+hr{
+    border-top: 1px solid #c7c7c7;
+}
+
+.section-results .text-results{
+    color: #3e3f57;
+    font-size: 18px;
+}
+
+.section-results .text-results ul{
+    list-style-type: none;
+}
+
+.section-results .text-results ul li{
+    font-size: 14px;
+}
+
+.section-results .text-results span.price{
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #855595;
+}
+
+.section-results .fa-dollar-sign {
+    font-size: 26px;
+    color: #fff;
+}
+
+.btn-return{
+    border: 1px solid #d4d4d8;
+    padding: 9px 20px 9px 20px;
+    border-radius: 4px;
+    background: #A593E0;
+    color: white;
+    position: relative;
+    top: -60px;
+    left: -11px;
+}
+
+.section-results .btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.open>.dropdown-toggle.btn-primary {
+    color: #eee;
+    background-color: #855595;
+    border-color: #b5b5b5;
+}
+
+
+.section-results .well{
+    margin-bottom: 100px;
+    border: 1px solid #ddd;
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+
+/* ==================== FOOTER ==================== */
+
+footer{
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    bottom: 0px;
+    left: 0px;
+    background: var(--nav-bg-color);
+    line-height: 40px;
+    color: #b5b5b5;
+    margin-top: -50px;
+}
+
+footer .fa-github{
+    font-size: 16px;
+    color: #A593E0;
+    cursor: pointer;
+}
+
 /*********************** MEDIA QUERIES ************************/
 
 @media screen and (max-width: 760px ){
@@ -320,7 +465,7 @@ body{
     .search-wrapper{
         width: 340px;
         top: 12%;
-        margin-bottom: 65px;
+        /* margin-bottom: 65px; */
     }
     footer span{
         display: none;
@@ -376,151 +521,4 @@ body{
         text-align: left;
     }
 
-}
-
-
-/* ==================== ABOUT ==================== */
-
-.section-about{
-    color: #eee;
-}
-
-.me-section{
-    width: 80%;
-}
-
-.about-icons{
-    margin: 10px;
-    padding: 10px;
-}
-
-.about{
-    padding: 10px;
-    width: 100%;
-}
-
-.about-content{
-    height: 35%;
-    background-color: #3e3f5762;
-    border-radius: 5px;
-}
-
-/* ==================== RESULTS ==================== */
-
-.container-fluid .page-bg{
-    background: url('/static/img/results-bg.jpg') top;
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
-.section-results .display-value {
-    margin-top: 20%;
-    margin-bottom: 20px;
-    padding: 0px 10px 15px 10px;
-    color: #3e3f57;
-    background: #c4da81;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    --moz--box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    --webkit--box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-.section-results{
-    color: #eee;
-    font-weight: 300;
-    background: #d4d0d1;
-}
-
-.section-results h2{
-    margin-top: 0px;
-}
-
-.section-results .lead{
-    font-size: 26px;
-    /* margin-bottom: 0px; */
-}
-
-hr{
-    border-top: 1px solid #c7c7c7;
-}
-
-.section-results .text-results{
-    color: #3e3f57;
-    font-size: 18px;
-}
-
-.section-results .text-results ul{
-    list-style-type: none;
-}
-
-.section-results .text-results ul li{
-    font-size: 14px;
-}
-
-.section-results .text-results span.price{
-    font-size: 24px;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #855595;
-}
-
-.section-results .fa-dollar-sign {
-    font-size: 26px;
-    color: #3e3e57;
-}
-
-.btn-return{
-    border: 1px solid #d4d4d8;
-    padding: 9px 20px 9px 20px;
-    border-radius: 4px;
-    background: #A593E0;
-    color: white;
-    position: relative;
-    top: -60px;
-    left: -11px;
-}
-
-.section-results .btn-primary:hover, 
-.btn-primary:focus, 
-.btn-primary:active, 
-.btn-primary.active, 
-.open>.dropdown-toggle.btn-primary {
-    color: #eee;
-    background-color: #855595;
-    border-color: #b5b5b5;
-}
-
-
-.section-results .well{
-    margin-bottom: 100px;
-    border: 1px solid #ddd;
-    background: #fff;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-#map {
-    height: 400px;
-    width: 100%;
-}
-
-
-/* ==================== FOOTER ==================== */
-
-footer{
-    position: fixed;
-    width: 100%;
-    height: 40px;
-    bottom: 0px;
-    left: 0px;
-    background: var(--nav-bg-color);
-    line-height: 40px;
-    color: #b5b5b5;
-    margin-top: -50px;
-}
-
-footer .fa-github{
-    font-size: 16px;
-    color: #A593E0;
-    cursor: pointer;
 }

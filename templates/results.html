@@ -13,10 +13,11 @@
             
 
             <div class="display-value">
-                <a href="/" class="btn btn-return btn-md btn-primary"><i class="fas fa-chevron-circle-left"></i> Return</a>
+                <!-- <a href="/" class="btn btn-return btn-md btn-primary"><i class="fas fa-chevron-circle-left"></i> Return</a> -->
                 <p class="lead text-center text-uppercase">
                     The value of your home is: <i class="fas fa-dollar-sign"></i> <span class="price"> {{res}} </span>
                 </p>
+                
             </div>
 
             <div class="well well-lg">
@@ -28,10 +29,11 @@
                 </ul>
         #}
             <div class="text-results">
-                <!-- <p class="lead text-center text-uppercase">
-                    The value of your home is: <i class="fas fa-dollar-sign"></i> <span class="price"> {{res}} </span>
-                </p> -->
-                <button id ="tweet"><i class="fab fa-twitter fa-3x"></i></button>
+                <div class="tweet-btn text-right">
+                    <a href="/" class="btn btn-return btn-md btn-primary"><i class="fas fa-chevron-circle-left"></i> Return</a>
+                    <button id="tweet">Log in and Tweet </button>
+                </div>
+                <p class="result-details text-center">Result Details:</p>
                 <hr>
                 <ul class="list-group">
                     <li class="list-group-item">ADDRESS: <span>{{address}}</span></li>
@@ -40,8 +42,8 @@
                     <li class="list-group-item">AREA LOT: {{lot}} and LIVING: {{liv}}</li>
                     <li class="list-group-item">YEAR: {{year}}</li>
                     <li class="list-group-item">USED ZIP: {{zipcode}} and SOURCE: {{source}}</li>
-                    <li class="list-group-item text-center">View on Google Map</li>
-                    <li class="list-group-item text-center" id="map"></li>
+                    <li class="list-group-item text-center"><p class="v-google"> View on Google Map <i class="fas fa-map-pin"></i></p></li>
+                    <li class="list-group-item text-center" id="map" style="height: 480px"></li>
                 </ul>
 
             </div>

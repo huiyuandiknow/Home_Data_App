@@ -12,14 +12,10 @@
 }
 
 
-/* 
+
 body{
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-    url('/static/img/bg-img1.jpeg') center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-  } */
+    
+}
 
 .bg-fader{
     position: absolute;
@@ -260,15 +256,31 @@ body{
     background-size: 100%;
 }
 
+.text-results button{
+    font-size: 14px;
+    border-radius: 100px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #1da1f2;
+    border: 1px solid #1da1f2;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15)
+}
+
 .section-results .display-value {
     margin-top: 20%;
     margin-bottom: 20px;
-    padding: 0px 10px 15px 10px;
+    padding: 40px 10px 20px 10px;
     color: #fff;
     background: #3e3e57;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     --moz--box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     --webkit--box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.section-results .price{
+    color: #a591e3;
+    font-size: 26px;
+}
 }
 
 .section-results{
@@ -282,7 +294,7 @@ body{
 }
 
 .section-results .lead{
-    font-size: 26px;
+    font-size: 22px;
 }
 
 hr{
@@ -311,18 +323,16 @@ hr{
 
 .section-results .fa-dollar-sign {
     font-size: 26px;
-    color: #fff;
+    color: #a58fe6;
 }
 
 .btn-return{
     border: 1px solid #d4d4d8;
     padding: 9px 20px 9px 20px;
     border-radius: 4px;
-    background: #A593E0;
+    background: #3e3e57;
     color: white;
-    position: relative;
-    top: -60px;
-    left: -11px;
+    float: left;
 }
 
 .section-results .btn-primary:hover, 
@@ -343,6 +353,17 @@ hr{
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.text-results .v-google{
+    font-size: 18px;
+    padding: 6px;
+    margin: 0;
+}
+
+.fa-map-pin{
+    font-size: 20px;
+    color: #ed412d;
 }
 
 #map {
@@ -420,7 +441,7 @@ footer .fa-github{
     }
     .search-wrapper{
         width: 460px;
-        top: 10%;
+        top: 160px;
     }
     .search-bar input[type=text]{
         margin-bottom: 4px;
@@ -464,7 +485,7 @@ footer .fa-github{
     }
     .search-wrapper{
         width: 340px;
-        top: 12%;
+        top: 110px;
         /* margin-bottom: 65px; */
     }
     footer span{
@@ -491,7 +512,7 @@ footer .fa-github{
     }
     .search-wrapper{
         width: 280px;
-        top: 10%;
+        top: 60px;
     }
     footer span{
         display: none;

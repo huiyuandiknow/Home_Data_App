@@ -1,7 +1,8 @@
 from address_handling import Address
 from db_model import existing_address
 from helper import num
-from model import model_random_forest
+# from model import model_random_forest
+from model import main_model
 from zillow_api_handler import zillow_api
 
 
@@ -45,10 +46,10 @@ class Results:
         if home_address.is_zip_good():
             self.home_zip = home_address.zip_code
             if home_address.is_king_county():
-                self.val = model_random_forest(self.home_zip, int(self.living), int(self.beds), int(self.baths), int(self.lot),
+#                self.val = model_random_forest(self.home_zip, int(self.living), int(self.beds), int(self.baths), int(self.lot),
+#                                     int(self.year))
+                self.val = main_model(self.home_zip, int(self.living), int(self.beds), int(self.baths), int(self.lot),
                                       int(self.year))
-#                self.val = main_model(self.home_zip, int(self.living), int(self.beds), int(self.baths), int(self.lot),
-#                                      int(self.year))
                 self.has_model_data = True
             if home_address.is_address_good():
                 data = zillow_api(self.address)

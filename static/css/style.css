@@ -434,6 +434,10 @@ hr{
     width: 100%;
 }
 
+#tweet {
+    border: none;
+    background-color: transparent;
+}
 
 /* ==================== FOOTER ==================== */
 

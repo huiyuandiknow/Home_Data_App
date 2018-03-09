@@ -1,25 +1,25 @@
 {% extends 'layout.html' %}}
 
 {% block body %}
-
-<div class="container section-results">
-    <div class="row">
-        <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2">
+<div class="container-fluid section-results">
+    <div class="row page-bg">
+        <div class="col-lg-10 col-lg-offset-1">
         <script type="text/javascript">
             var zil = {{zil|tojson|safe}};
             var zil_home = {{zil_home|tojson|safe}};
+            var res = {{res|tojson|safe}};
         </script>
-
-            <h2>Results</h2>
-            <a href="/" class="btn btn-return btn-md btn-primary"><i class="fas fa-chevron-circle-left"></i> Return</a>
+        
+            
 
             <div class="display-value">
+                <a href="/" class="btn btn-return btn-md btn-primary"><i class="fas fa-chevron-circle-left"></i> Return</a>
                 <p class="lead text-center text-uppercase">
                     The value of your home is: <i class="fas fa-dollar-sign"></i> <span class="price"> {{res}} </span>
                 </p>
             </div>
 
-            <div class="well well-md">
+            <div class="well well-lg">
 
         {#      <ul class="list-group">
                     {% for result in results %}
@@ -34,20 +34,15 @@
                 <button id ="tweet"><i class="fab fa-twitter fa-3x"></i></button>
                 <hr>
                 <ul class="list-group">
-                    <li class="list-group-item">Address: <span>{{address}}</span></li>
-{#                    <li class="list-group-item">Property Type: <span>{{test.bedrooms}}</span></li>#}
-                    <li class="list-group-item">Number of Beds: {{beds}} and Baths: {{baths}}</li>
-                    <li class="list-group-item">Area, lot: {{lot}} and Living: {{liv}}</li>
-                    <li class="list-group-item">Year {{year}}</li>
-                    <li class="list-group-item">Used zip: {{zipcode}} and Source: {{source}}</li>
+                    <li class="list-group-item">ADDRESS: <span>{{address}}</span></li>
+{#                    <li class="list-group-item">PROPERTY TYPE: <span>{{test.bedrooms}}</span></li>#}
+                    <li class="list-group-item">NUMBER OF BEDS: {{beds}} and Baths: {{baths}}</li>
+                    <li class="list-group-item">AREA LOT: {{lot}} and LIVING: {{liv}}</li>
+                    <li class="list-group-item">YEAR: {{year}}</li>
+                    <li class="list-group-item">USED ZIP: {{zipcode}} and SOURCE: {{source}}</li>
                     <li class="list-group-item text-center">View on Google Map</li>
                     <li class="list-group-item text-center" id="map"></li>
                 </ul>
-
-                <div class="zillow_data">
-                    <h3>ZILLOW API DISPLAYS HERE</h3>
-                    <ul></ul>
-                </div>
 
             </div>
 

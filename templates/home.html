@@ -6,27 +6,30 @@
 
 <div class="search-wrapper">
 
-    <h1>The Best Estimate For<br>Your Home</h1>
+    <h1>The Best Estimate For <br>Your Home</h1>
     <p class="lead text-center">Get an instant and accurate value of a home for sale.</p>
     
     <form action="/results" method="post">
 
             <div class="search-bar">
                 <input type="text" id="address" name="address" placeholder="Enter Your Address">
-            </div>            
-            
+            </div>
+
+            <div class="search-bar input-liv">
+                <input type="text" id="living" name="living" placeholder="Enter Living Area SQ FT">
+            </div>
+
+            <div class="search-bar input-lot">
+                <input type="text" id="lot" name="lot" placeholder="Enter Lot Area SQ FT">
+            </div>
+
 {#            <select id="type" name="type" class="selectpicker show-tick drop-down-hm"  title="Home Type">
                     <option>Condo</option>
                     <option>House</option>
                     <option>Townhouse</option>
                     <option>Land</option>
             </select>#}
-            <div class="search-bar">
-                <input type="text" id="living" name="living" placeholder="Enter Your Living Area Square Footage">
-            </div>
-            <div class="search-bar">
-                <input type="text" id="lot" name="lot" placeholder="Enter Your Lot Area Square Footage">
-            </div>
+          
             <select id="bedrooms" name="beds" class="selectpicker show-tick"  title="Bedrooms">
                     <option value="1">Bed: 1</option>
                     <option value="2" selected>Bed: 2</option>
@@ -43,12 +46,12 @@
             </select>
 
             <select id="year" name="year" class="selectpicker show-tick"  title="Year">
-                    <option value="2013">Year built: 2013 and newer</option>
-                    <option value="2008" selected>Year built: 2008.. 2012</option>
-                    <option value="1998">Year built: 1998.. 2007</option>
-                    <option value="1978">Year built: 1978.. 1997</option>
-                    <option value="1958">Year built: 1958.. 1977</option>
-                    <option value="1938">Year built: 1957 and older</option>
+                    <option value="2013">Year Built: 2013 and newer</option>
+                    <option value="2008" selected>Year Built: 2008...2012</option>
+                    <option value="1998">Year Built: 1998...2007</option>
+                    <option value="1978">Year Built: 1978...1997</option>
+                    <option value="1958">Year Built: 1958...1977</option>
+                    <option value="1938">Year Built: 1957 and older</option>
             </select>
 
                   

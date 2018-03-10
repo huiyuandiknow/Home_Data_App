@@ -23,11 +23,11 @@ $(function(){
     }, 20000);
 
     // Add background color to body on rout /results
-    $(function(){
-        if (window.location.pathname == '/results'){
-            $("body").css("background-color", "#ebe6e0");
-        }
-    });
+    // $(function(){
+    //     if (window.location.pathname == '/results'){
+    //         $("body").css("background-color", "#fff");
+    //     }
+    // });
 
 
     // $(function(){

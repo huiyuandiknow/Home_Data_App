@@ -14,7 +14,8 @@
 
 
 body{
-    
+    height: 100%;
+    width: 100%;
 }
 
 .bg-fader{
@@ -38,7 +39,7 @@ body{
     background: var(--nav-bg-color);
     border: none;
     border-radius: 0px;
-    z-index: 999;
+    /* z-index: 999; */
     text-align: center;
     margin-bottom: 0;
     box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.3);
@@ -250,13 +251,26 @@ body{
 
 /* ==================== RESULTS ==================== */
 
+.results-wrapper{
+    background: #fff;
+    padding: 40px 0 10px 0;
+}
+
+.section-results{
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+.result-details{
+    padding-left: 10px;
+}
+
 .container-fluid .page-bg{
     background: url('/static/img/results-bg.jpg') top;
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
-.text-results button{
+.section-results .tweet-btn button{
     font-size: 14px;
     border-radius: 100px;
     padding: 10px 20px;
@@ -268,10 +282,12 @@ body{
 
 .section-results .display-value {
     margin-top: 20%;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     padding: 40px 10px 20px 10px;
     color: #fff;
     background: #3e3e57;
+    position: relative;
+    z-index: 999;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     --moz--box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     --webkit--box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -289,6 +305,11 @@ body{
     background: #e8e3dd;
 }
 
+.section-results .img-logo img{
+    width: 450px;
+    margin: 0 auto;
+}
+
 .section-results h2{
     margin-top: 0px;
 }
@@ -297,9 +318,9 @@ body{
     font-size: 22px;
 }
 
-hr{
+/* hr{
     border-top: 1px solid #c7c7c7;
-}
+} */
 
 .section-results .text-results{
     color: #3e3f57;
@@ -310,8 +331,10 @@ hr{
     list-style-type: none;
 }
 
-.section-results .text-results ul li{
+.section-results .text-results ul li {
     font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .section-results .text-results span.price{
@@ -345,20 +368,11 @@ hr{
     border-color: #b5b5b5;
 }
 
-
-.section-results .well{
-    margin-bottom: 100px;
-    border: 1px solid #ddd;
-    background: #fff;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
 .text-results .v-google{
     font-size: 18px;
     padding: 6px;
     margin: 0;
+    margin-top: 20px
 }
 
 .fa-map-pin{

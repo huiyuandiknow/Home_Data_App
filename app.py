@@ -1,4 +1,5 @@
 from flask import render_template, request, redirect, url_for
+
 from data_handling import Results
 from flask_config import get_app
 
@@ -22,7 +23,7 @@ def show_results():
         address = request.form['address']
     except:
         return redirect(url_for('index'))
-    #address = '8105 SE Henderson St Portland, OR 97206'
+    # address = ''
     beds = request.form['beds'].replace('Bed: ', '')
     baths = request.form['baths'].replace('Bath: ', '')
     living = request.form['living']

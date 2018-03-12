@@ -8,11 +8,9 @@ from selenium.webdriver.chrome.options import Options
 from selenium_config import get_path
 
 
-class Not_KC_Test(unittest.TestCase):
-    address_good_KC = ['1724 Beacon Way SE Renton, WA 98058', '1925 N 170th St Shoreline, WA 98133']
-    address_bad = ['fjweogrgjrgl;jjegjegjgjlgjjgl;jgljgslj']
+class NotKcTest(unittest.TestCase):
     address_good = ['8105 SE Henderson St Portland, OR 97206', '439 Franklin St Mountain View, CA 94041']
-    zip_good = ['98058', '98053']
+
 
     @classmethod
     def setUp(inst):
@@ -43,9 +41,10 @@ class Not_KC_Test(unittest.TestCase):
                 res = False
                 break
             else:
+                time.sleep(1)
                 self.driver.execute_script("window.scrollTo(0, 540)")  # scroll down
                 if self.is_zillow():  # if we found a zillow word -- it is ok
-                    time.sleep(5)
+                    time.sleep(4)
                     self.driver.implicitly_wait(5)
                     self.driver.get(get_path().app_path)
                 else:

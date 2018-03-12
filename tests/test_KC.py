@@ -8,10 +8,9 @@ from selenium.webdriver.chrome.options import Options
 from selenium_config import get_path
 
 
-class KC_Test(unittest.TestCase):
-    address_good_KC = ['1724 Beacon Way SE Renton, WA 98058', '1925 N 170th St Shoreline, WA 98133']
-    address_bad = ['fjweogrgjrgl;jjegjegjgjlgjjgl;jgljgslj']
-    address_good = ['8105 SE Henderson St Portland, OR 97206']
+class KcTest(unittest.TestCase):
+    address_good_KC = ['1724 Beacon Way SE Renton, WA 98058', '1925 N 170th St Shoreline, WA 98133',
+                       '3000 Royal Hills Dr SE Renton, WA 98058, 21b']
     zip_good = ['98058', '98053']
 
     @classmethod
@@ -43,9 +42,10 @@ class KC_Test(unittest.TestCase):
                 res = False
                 break
             else:
+                time.sleep(1)
                 self.driver.execute_script("window.scrollTo(0, 540)")  # scroll down
                 if self.is_model():  # if we found a model word -- it is ok
-                    time.sleep(5)
+                    time.sleep(4)
                     self.driver.implicitly_wait(5)
                     self.driver.get(get_path().app_path)
                 else:

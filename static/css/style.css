@@ -11,8 +11,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-
-
 body{
     height: 100%;
     width: 100%;
@@ -32,7 +30,6 @@ body{
     margin: 0;
     padding: 0;
 }
-
 
 /* ==================== NAVBAR ==================== */
 .my-navbar{
@@ -282,7 +279,6 @@ body{
 
 .section-results .display-value {
     margin-top: 20%;
-    /* margin-bottom: 20px; */
     padding: 40px 10px 20px 10px;
     color: #fff;
     background: #3e3e57;
@@ -297,13 +293,6 @@ body{
     color: #a591e3;
     font-size: 26px;
 }
-}
-
-.section-results{
-    color: #eee;
-    font-weight: 300;
-    background: #e8e3dd;
-}
 
 .section-results .img-logo img{
     width: 450px;
@@ -317,10 +306,6 @@ body{
 .section-results .lead{
     font-size: 22px;
 }
-
-/* hr{
-    border-top: 1px solid #c7c7c7;
-} */
 
 .section-results .text-results{
     color: #3e3f57;
@@ -384,7 +369,6 @@ body{
     height: 400px;
     width: 100%;
 }
-
 
 /* ==================== FOOTER ==================== */
 

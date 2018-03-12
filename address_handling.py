@@ -12,7 +12,12 @@ class Address:
         self.address = address
 
     def zip_extract(self):
-        addr = usaddress.tag(self.address)
+        addr = ["",""]
+        try:
+            addr = usaddress.tag(self.address)
+        except:
+            self.zip_extracted = True
+            addr[1] = 'ambiguous'
         if addr[1] != 'ambiguous':
             for key, val in addr[0].items():
                 if key == "ZipCode":

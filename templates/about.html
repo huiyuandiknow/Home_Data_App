@@ -2,101 +2,136 @@
 
 {% block body %}
 
-<style>
-    body {
-        background-color: #855595;
-    }
-    .head-foot-margin{
-        margin-top: 10%;
-        margin-bottom: 10%;
-    }
-    .hide {
-        display: none;
-    }
-
-    .about-content{
-        height: fit-content;
-        background-color: #3e3f5762;
-        border-radius: 5px;
-}
-
-.about-text {
-    font-size: 11px;
-}
-</style>
-
-<div class="head-foot-margin">
-<div class="container section-about">
-    <div class="text-center">
-        <h3>About</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
+<section class="sec-about">
+        <div class="container text-center">
+          <div class="row about-icons">
+            <h2>Technologies Used</h2>
+                <hr class="tools-line">
+                <div class="col-md-12 col-sm-12">
+                    <ul class="tools-used">
+                        <li><img src="/static/img/icons/html-icon.png" style="width: 100px"></li>
+                        
+                        <li><img src="/static/img/icons/css-icon.png" style="width: 74px"></li>
+                        
+                        <li><img src="/static/img/icons/javascript-icon.png" style="width: 112px"></li>
+                    </ul>
+                </div>
+            
+            
+            <div class="col-md-12 col-sm-12">
+              <ul class="tools-used"> 
+                 <li><img src="/static/img/icons/bootstrap-icon.png" style="width: 140px"></li>
+                
+                 <li><img src="/static/img/icons/jquery-icon.png" style="width: 100px"></li>
+                
+                 <li><img src="/static/img/icons/flask.png" style="width: 180px"></li>
+                
+                 <li><img src="/static/img/icons/python-icon.png" style="width: 144px"></li>
+                
+                 <li><img src="/static/img/icons/google-map-icon.png" style="width: 120px"></li>                
+              </ul>
+            </div>
+            
+            
+        </div>
     </div>
-    <h3 class="text-center">Tools We Used</h3>
-    <div class="row about-icons">
-    <div class="col-xs-2 col-md-3 text-center"><i class="fab fa-python fa-5x"></i></div>
-    <div class="col-xs-2 col-md-3 text-center"><i class="fab fa-js-square fa-5x"></i></div>
-    <div class="col-xs-2 col-md-3 text-center"><i class="fab fa-html5 fa-5x"></i></div>
-        Bootstrap 3.3<br>
-        Google Maps API<br>
-        Flask<br>
-    </div>
-       
+</section>
+
+<div class="container our-team text-center">
+    <h2>Our Team</h2>
+    <hr class="our-team-line">
 </div>
 
-<div class="container section-about me-section center-block">
-    <div class="row about center-block">
-        <div class="col-xs-2 col-md-2"> </div>
-        <div class="col-xs-5 col-md-3">
-            <img src="https://avatars3.githubusercontent.com/u/13004262?s=460&v=4" class="img-responsive img-rounded" alt="Hui-yu (Laura) Yang"/>
-        </div>
-        <div class="col-xs-3 col-md-5 about-content">
-            <h3 class="text-right">Hui-yu (Laura) Yang</h3>
-            <p class="aboutP">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
-            <a href="https://github.com/huiyuandiknow" target="_blank">
-            <i class="fab fa-github fa-3x"></i></a>
-        </div>
-    </div>
-    <div class="row about">
-            <div class="col-xs-2 col-md-2"> </div>
-        <div class="col-xs-3 col-md-5 about-content">
-            <h3 class="text-left">Mikhail Gorbunov</h3>
-            <p class="aboutP">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
-            <a href="https://github.com/mikleg" target="_blank">
-            <i class="fab fa-github fa-3x"></i></a>
-        </div>
-        <div class="col-xs-5 col-md-3">
-            <img src="https://avatars0.githubusercontent.com/u/16841976?s=460&v=4" class="img-responsive img-rounded" alt="Mikhail Gorbunov"/>
-        </div>
-        
-    </div>
-    <div class="row about">
-            <div class="col-xs-2 col-md-2"> </div>
-        <div class="col-xs-5 col-md-3">          
-            <img src="https://avatars0.githubusercontent.com/u/26147765?s=460&v=4" class="img-responsive img-rounded" alt="Jak Ashuraliev"/> 
-        </div>
-        <div class="col-xs-3 col-md-5 about-content">
-            <h3 class="text-right">Jak Ashuraliev</h3>
-            <p class="aboutP">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
-            <a href="https://github.com/jak-ashuraliev" target="_blank">  
-            <i class="fab fa-github fa-3x"></i></a>
-        </div>
-    </div>
-    <div class="row about">
-        <div class="col-xs-2 col-md-2"> </div>
-        <div class="col-xs-3 col-md-5 about-content">
-            <h3 class="text-left">Kristy Stienstra</h3>
-            <p class="aboutP">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique, dolorem omnis nam dolorum rem facilis nobis vel. A aspernatur voluptatum aut reiciendis saepe obcaecati natus incidunt perspiciatis doloribus veritatis!</p>
-            <a href="https://github.com/KristyStien" target="_blank">  
-            <i class="fab fa-github fa-3x"></i></a>
-        </div>
-        <div class="col-xs-5 col-md-3">       
-            <img src="https://avatars2.githubusercontent.com/u/30839938?s=460&v=4" class="img-responsive img-rounded" alt="Kristy Stienstra"/>
-        </div>
-        
-    </div>
+<div class="sec-wrapper about" style="background: #d6d6d6">
+<section class="sec-row-one">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <h2><span>Mikhail</span><br>Gorbunov</></h2>
+                <hr>
+                <h4>Web Developer</h4>
+                <P>Mikhail is a web developer (Java + Spring, Python + Flask)with huge background in a field of applied engineering sciences. He is passionate about coding and any technologies from airplanes to microcontrollers. Alongside with a broad foundation in science and mathematics he keeps flexibility to focus on specific tasks. He has several deployed web apps.</p>
+                <ul>
+                <li><a href="https://github.com/mikleg" target="_blank"><i class="fab fa-github-square"></i> Github</a></li>
+                <li><a href="https://www.linkedin.com/in/mikhail-gorbunov-4bb521113" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 img-profile">
+                <img class="img-responsive img-rounded" src="https://avatars0.githubusercontent.com/u/16841976?s=460&v=4">
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</section>
 </div>
+      
+<div class="sec-wrapper about" style="background: #ded4ff">
+<section class="sec-row">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12 img-profile">
+            <img class="img-responsive img-rounded" src="https://avatars2.githubusercontent.com/u/30839938?s=460&v=4">
+        </div>
+        <div class="col-md-8 col-sm-12 col-xs-12">
+            <h2><span>Kristy</span><br>Stienstra</></h2>
+            <hr class="hr-even">
+            <h4>Front-End Developer</h4>
+            <P>Laura is a statistical analyst with a proven background of managing and analyzing complex data. She is passionate about building mastery in data science and predictive models. With more than 10 years of training in Mathematics, Statistics, and Biostatistics, she is technically fluent and can rapidly assimilate cutting-edge technologies, ideas, and processes in fast-paced environments.</p>
+            <ul>
+            <li><a href="https://github.com/KristyStien" target="_blank"><i class="fab fa-github-square"></i> Github</a></li>
+            <li><a href="https://www.linkedin.com/in/kristystienstra" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            </ul>
+        </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</section>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+<div class="sec-wrapper about" style="background: #A593E0">
+<section class="sec-row">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <h2><span>Laura</span><br>Yang</></h2>
+                <hr>
+                <h4>Statistical Analyst</h4>
+                <P>Laura is a statistical analyst with a proven background of managing and analyzing complex data. She is passionate about building mastery in data science and predictive models. With more than 10 years of training in Mathematics, Statistics, and Biostatistics, she is technically fluent and can rapidly assimilate cutting-edge technologies, ideas, and processes in fast-paced environments.</p>
+                <ul>
+                <li><a href="https://github.com/huiyuandiknow" target="_blank"><i class="fab fa-github-square"></i> Github</a></li>
+                <li><a href="https://www.linkedin.com/in/laurayangml" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 img-profile">
+                <img class="img-responsive img-rounded" src="https://avatars3.githubusercontent.com/u/13004262?s=460&v=4">
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</section>
+</div>
+      
+<div class="sec-wrapper about" style="background: #eee">
+<section class="sec-row">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12 img-profile">
+            <img class="img-responsive img-rounded" src="https://avatars0.githubusercontent.com/u/26147765?s=460&v=4">
+        </div>
+        <div class="col-md-8 col-sm-12 col-xs-12">
+            <h2><span>Jak</span><br>Ashuraliev</></h2>
+            <hr class="hr-even">
+            <h4>Front-End Developer</h4>
+            <P>Creative Front End Developer dedicated to building and optimizing the performance of user-centric websites. Over the years I have been working with small businesses and agencies to build standards-compliant and clean front-end foundations for accessible and responsive web sites and applications.</p>
+            <ul>
+            <li><a href="https://github.com/jak-ashuraliev" target="_blank"><i class="fab fa-github-square"></i> Github</a></li>
+            <li><a href="https://www.linkedin.com/in/jak-ashuraliev" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            </ul>
+        </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</section>
+</div>
+<div class="footer-space"></div>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     var aboutMe = $(".about");
 for(var i = 0; i < aboutMe.length; i++){
@@ -111,7 +146,7 @@ for(var i = 0; i < aboutMe.length; i++){
         aboutP.addClass("hide");
         aboutText.addClass("about-text");
         aboutIcons.addClass("about-text");
-    }
+    } -->
 </script>
 
 {% endblock %}

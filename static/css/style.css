@@ -1,8 +1,3 @@
-:root{
-    --btn-bg-color-light: #855595;
-    --btn-hover-color: #A593E0;
-    --nav-bg-color: #3e3f57;
-}
 *{
     margin: 0;
     padding: 0;
@@ -28,7 +23,7 @@ body{
 }
 /* ==================== NAVBAR ==================== */
 .my-navbar{
-    background: var(--nav-bg-color);
+    background: #3e3f57;
     border: none;
     border-radius: 0px;
     text-align: center;
@@ -193,12 +188,19 @@ body{
     padding-top: 100px;
     color: #855595;
   }
+  .sec-about .mobile-view{
+      display: none;
+  }
   .sec-wrapper{
       padding-top: 60px;
       padding-bottom: 60px;
   }
+  .sec-about .tools-used ul{
+    list-style-type: none;
+  }
   .sec-about .tools-used li{
-    padding: 40px;
+    list-style-type: none;
+    padding: 20px;
   }
   .sec-about .tools-used{
       margin-top: 80px;
@@ -233,13 +235,13 @@ body{
     color: purple;
   }
   .sec-wrapper hr{
-    width: 300px;
+    width: 310px;
     margin-left: 0;
     border-bottom: 2px solid #eee;
   }
   .sec-wrapper hr.hr-even{
     border-bottom: 2px solid #888;
-    width: 300px;
+    width: 310px;
     margin-left: 0;
   }
   .sec-wrapper h4{
@@ -404,7 +406,7 @@ footer{
     height: 40px;
     bottom: 0px;
     left: 0px;
-    background: var(--nav-bg-color);
+    background: #3e3f57;
     line-height: 40px;
     color: #b5b5b5;
     margin-top: -50px;
@@ -450,7 +452,6 @@ footer .fa-github{
     .input-liv{
         width: 49%;
     }
-    
     .input-lot {
         width: 50%;
     }
@@ -495,6 +496,9 @@ footer .fa-github{
         height: 26px;
         text-align: center;
     }
+    .sec-about .tools-used {
+        margin-top: 60px;
+    }
 }
 
 @media screen and (max-width: 414px ){
@@ -508,7 +512,6 @@ footer .fa-github{
     .search-wrapper{
         width: 340px;
         top: 110px;
-        /* margin-bottom: 65px; */
     }
     footer span{
         display: none;
@@ -525,6 +528,10 @@ footer .fa-github{
         padding: 2px 0px 2px 18px;
         text-align: left;
     }
+    .sec-about .mobile-view{
+        display: none;
+    } 
+    
 }
 
 @media screen and (max-width: 375px ){
@@ -563,6 +570,27 @@ footer .fa-github{
         padding: 2px 0px 2px 18px;
         text-align: left;
     }
+    .img-profile img{
+        margin: 5px auto;
+        width: 200px;
+        margin-bottom: 20px;
+    }
+    .col-md-8{
+        padding-left: 15px;
+    }
+    .sec-wrapper{
+        text-align: center;
+    }
+    .aboutP,
+    .sec-about .about-icons{
+        display: none;
+    }
+    .sec-about .mobile-view{
+        display: block;
+    } 
+    .our-team h2{
+        padding-top: 0;
+      }
 
 }
 

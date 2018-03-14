@@ -30,10 +30,17 @@ $(function(){
     aboutMe.eq(target).before(aboutMe.eq(target2));
     }
 
+    // var aboutP = $(".aboutP");
+    // var aboutText = $("h3");
+    // var aboutIcons =$(".about-icons");
+    // if (window.innerWidth < 400){
+        // aboutP.addClass("hide");
+        // aboutIcons.addClass("hide");
+        // aboutP.addClass("hide");
+        // aboutText.addClass("about-text");
+        // aboutIcons.addClass("about-text");
 
 });
-
-
 
 
 // ============== GOOGLE MAP ============== //
@@ -141,7 +148,6 @@ function setMarker()  {
             });
             markers.push(marker);
 
-
 }
 
 }
@@ -163,7 +169,7 @@ for(var i = 0; i < aboutMe.length; i++){
     var target2 = Math.floor(Math.random() * aboutMe.length -1) +1;
     aboutMe.eq(target).before(aboutMe.eq(target2));
 }
- // var aboutP = $(".aboutP");
+    // var aboutP = $(".aboutP");
     // var aboutText = $("h3");
     // var aboutIcons =$(".about-icons");
     // if (window.innerWidth < 740){

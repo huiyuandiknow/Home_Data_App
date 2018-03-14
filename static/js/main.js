@@ -22,14 +22,6 @@ $(function(){
         }
     }, 20000);
 
-    // Add background color to body on rout /results
-    // $(function(){
-    //     if (window.location.pathname == '/results'){
-    //         $("body").css("background-color", "#fff");
-    //     }
-    // });
-
-
     // About Page - Profile Image Randomize Profile
     var aboutMe = $(".about");
     for(var i = 0; i < aboutMe.length; i++){
@@ -37,28 +29,6 @@ $(function(){
     var target2 = Math.floor(Math.random() * aboutMe.length -1) +1;
     aboutMe.eq(target).before(aboutMe.eq(target2));
     }
-
-    // var aboutP = $(".aboutP");
-    // var aboutText = $("h3");
-    // var aboutIcons =$(".about-icons");
-    // if (window.innerWidth < 740){
-        // aboutIcons.addClass("hide");
-        // aboutP.addClass("hide");
-        // aboutText.addClass("about-text");
-        // aboutIcons.addClass("about-text");
-    // } 
-
-    // $(function(){
-    //     if (window.location.pathname == "/results" || window.location.pathname == "/about") {
-    //         // On page load, set body height to 100%
-    //         $("body").css("height", "100%")
-    //         // Hide footer on results page
-    //         // $("footer").hide();
-    //     } else {
-    //         // $("footer").css("position", "absolute");
-    //         $("body").css("height", "100vh")
-    //     }
-    // });
 
 
 });
@@ -193,4 +163,24 @@ for(var i = 0; i < aboutMe.length; i++){
     var target2 = Math.floor(Math.random() * aboutMe.length -1) +1;
     aboutMe.eq(target).before(aboutMe.eq(target2));
 }
+ // var aboutP = $(".aboutP");
+    // var aboutText = $("h3");
+    // var aboutIcons =$(".about-icons");
+    // if (window.innerWidth < 740){
+        // aboutIcons.addClass("hide");
+        // aboutP.addClass("hide");
+        // aboutText.addClass("about-text");
+        // aboutIcons.addClass("about-text");
+    // } 
 
+    // $(function(){
+    //     if (window.location.pathname == "/results" || window.location.pathname == "/about") {
+    //         // On page load, set body height to 100%
+    //         $("body").css("height", "100%")
+    //         // Hide footer on results page
+    //         // $("footer").hide();
+    //     } else {
+    //         // $("footer").css("position", "absolute");
+    //         $("body").css("height", "100vh")
+    //     }
+    // });

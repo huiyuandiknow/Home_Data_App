@@ -21,12 +21,18 @@ class Address:
         if addr[1] != 'ambiguous':
             for key, val in addr[0].items():
                 if key == "ZipCode":
-                    self.zip_code = int(val)
-                    self.zip_good = True
-                    self.zip_extracted = True
-                    if addr[1] is not 'Ambiguous':
-                        self.address_good = True
-                    break
+                    try:
+                        self.zip_code = int(val)
+                        self.zip_good = True
+                        self.zip_extracted = True
+                        if addr[1] is not 'Ambiguous':
+                            self.address_good = True
+                        break
+                    except ValueError:
+                        self.zip_good = False
+                        self.zip_extracted = True
+                        self.address_good = False
+                        break
 
     def is_zip_good(self):
         if not self.zip_extracted:

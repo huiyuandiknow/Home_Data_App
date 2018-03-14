@@ -1,22 +1,35 @@
-from flask import render_template, request, redirect, url_for
-
+from flask import render_template, request, redirect, url_for, session
 from data_handling import Results
 from flask_config import get_app
+from coockies_session import ChunkedSecureCookieSessionInterface
+from statistics import Statistics
+from statistics_db_model import UserEnvironment, User, Environment, CheckPoint
+
+
 
 app = get_app()
-# ====== ROUTES ====== ###
+app.session_interface = ChunkedSecureCookieSessionInterface()
 
+# ====== ROUTES ====== ###
+@app.before_request
+def make_session_permanent():
+    session.permanent = True
 
 # Index Page
 @app.route('/')
 def index():
-    return render_template('home.html')
+
+    make_session_permanent()
+    Statistics.handle_homepage()
+    response = render_template('home.html')
+    return response
 
 
 # Results Page
 # It requests a data from the form on the home page and renders a results page
 @app.route('/results', methods=['GET', 'POST'])
 def show_results():
+
     zil = ""
     zil_home = ""
     try:
@@ -42,32 +55,18 @@ def show_results():
     else:
         zil_home = None
         zil = None
-    return render_template('results.html', res=data.val, beds=data.beds,
+    response = render_template('results.html', res=data.val, beds=data.beds,
                            baths=data.baths, source=source, address=address, lot=data.lot,
                            liv=data.living, zipcode=data.home_zip, year=data.year, zil=zil, zil_home=zil_home)
+
+    return response
+
 
 
 # About Page
 @app.route('/about')
 def about():
     return render_template('about.html')
-
-# @app.route('/test')
-# def test():
-#
-#     return render_template('home_test.html')
-#
-# @app.route('/test_results', methods=['GET', 'POST'])
-# def test_res():
-#     #address = '1309 Harrington Ave SE, Renton, WA 98058'
-#     addr = request.form['address']
-#     res = ''
-#     #for key, val in addr[0].items():
-#     #    if key == "ZipCode":
-#     #        res = val
-#
-#     #return render_template('test_results.html', res=res)
-#     return render_template('test_results.html', res=zillow_api(addr))
 
 if __name__ == '__main__':
     app.run()

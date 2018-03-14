@@ -15,6 +15,6 @@ def get_app():
     # For testing purposes, will be deleted later.
     app.debug = True
     app.secret_key = 'homeapp'
-    app.permanent_session_lifetime = 180000
+    app.permanent_session_lifetime = 18000000
     app.session_cookie_name = "home_app"
     return app

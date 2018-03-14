@@ -49,8 +49,10 @@ class ChunkedSecureCookieSessionInterface(SessionInterface):
         if not val:
             return self.session_class()
         max_age = total_seconds(app.permanent_session_lifetime)
+        #print('val=', val, 'maxage=', max_age)
         try:
             data = s.loads(val, max_age=max_age)
+
             return self.session_class(data)
         except BadSignature:
             print ('bad_signature')
@@ -61,7 +63,7 @@ class ChunkedSecureCookieSessionInterface(SessionInterface):
         path = self.get_cookie_path(app)
         if not session:
             if session.modified:
-                for cookie_idx in range(10):
+                for cookie_idx in range(1):
                     response.delete_cookie('%s:%s' % (app.session_cookie_name, cookie_idx),
                                            domain=domain, path=path)
             return
@@ -70,15 +72,18 @@ class ChunkedSecureCookieSessionInterface(SessionInterface):
         expires = self.get_expiration_time(app, session)
         val = self.get_signing_serializer(app).dumps(dict(session))
 
-        chunks, chunk_size = len(val), int(len(val) / 9)
-        vals = [val[i:i + chunk_size] for i in range(0, chunks, chunk_size)]
+        #chunks, chunk_size = len(val), int(len(val) / 9)
+        #vals = [val[i:i + chunk_size] for i in range(0, chunks, chunk_size)]
 
-        for i in range(10):
-            try:
-                val = vals[i]
-            except:
-                val = ''
-            response.set_cookie('%s:%s' % (app.session_cookie_name, i), val,
+        # for i in range(10):
+            # try:
+            #     val = vals[i]
+            # except:
+            #     val = ''
+            # response.set_cookie('%s:%s' % (app.session_cookie_name, i), val,
+            #                     expires=expires, httponly=httponly,
+            #                     domain=domain, path=path, secure=secure)
+        response.set_cookie('%s:%s' % (app.session_cookie_name, 0), val,
                                 expires=expires, httponly=httponly,
                                 domain=domain, path=path, secure=secure)
 

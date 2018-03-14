@@ -4,7 +4,6 @@ from sqlalchemy import Table, Column, Integer, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 from datetime import datetime
-from flask import session
 Base = declarative_base()
 
 from flask_config import get_app
@@ -25,7 +24,9 @@ class User(db.Model):
 
     @staticmethod
     def get_user_by_id(user_id):
-        return User.query.filter_by(id=user_id).first()
+        aa = User.query.filter_by(id=user_id).first()
+
+        return aa
 
     def add_new(self):
         db.session.add(self)
@@ -43,15 +44,23 @@ class Environment(db.Model):
     browser = db.Column(db.String(15))
     check_points = relationship("CheckPoint")
     time_of_creation = db.Column(db.String(26))
+    platform = db.Column(db.String(15))
+    version = db.Column(db.String(15))
+    ip = db.Column(db.String(15))
 
 
     def __init__(self, ue, user_id):
         self.browser = ue.browser[:15]
+        self.platform = ue.platform[:15]
+        self.version = ue.version[:15]
+        self.ip = ue.ip[:15]
         self.time_of_creation = str(datetime.now())
         self.user_id = user_id
 
     def is_equal(self, usr_env):
-        return self.browser == usr_env.browser and True
+
+        return self.browser == usr_env.browser[:15] and self.platform == usr_env.platform[:15] \
+               and self.ip == usr_env.ip[:15] and self.version == usr_env.version[:15]
 
     @staticmethod
     def get_env_by_id(env_id):
@@ -67,10 +76,12 @@ class CheckPoint(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     env_id = Column(db.Integer, ForeignKey('environment.id'))
     time = db.Column(db.String(26))
+    page = db.Column(db.String(2))
 
-    def __init__(self, env_id):
+    def __init__(self, env_id, page):
         self.time = str(datetime.now())
         self.env_id = env_id
+        self.page = page
     def add_new(self):
         db.session.add(self)
         db.session.commit()
@@ -94,7 +105,6 @@ class UserEnvironment:
         self.platform = u_a.platform
         self.user_agent_string = u_a.string
         self.version = u_a.version
-        #self.time = str(datetime.now())
         self.ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
         return self
 

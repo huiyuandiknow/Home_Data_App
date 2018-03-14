@@ -222,8 +222,149 @@ body{
 
 /* ==================== ABOUT ==================== */
 
-.section-about{
-    color: #eee;
+.sec-about h2{
+    padding-top: 100px;
+    color: #855595;
+  }
+  
+  .sec-wrapper{
+      padding-top: 60px;
+      padding-bottom: 60px;
+  }
+  
+  .sec-about .tools-used li{
+    padding: 40px;
+  }
+
+  .sec-about .tools-used{
+      margin-top: 80px;
+  }
+  
+  .col-md-8{
+    padding-left: 40px;
+  }
+  
+  .img-profile img{
+    margin: 5px auto;
+    width: 300px;
+  }
+
+  .our-team{
+      margin-bottom: 60px;
+  }
+
+  .our-team h2{
+    padding-top: 60px;
+    color: #855595;
+  }
+
+  .our-team .our-team-line,
+  .sec-about .tools-line{
+    border-bottom: 2px solid #855595;
+    margin-bottom: 60px;
+    width: 200px;
+    margin: 0 auto;
+  }
+  
+  .sec-wrapper h2{
+    font-size: 45px;
+    margin-top:0;
+    padding-top: 0;
+  }
+  
+  .sec-wrapper h2>span{
+    color: purple;
+  }
+  
+  .sec-wrapper hr{
+    width: 300px;
+    margin-left: 0;
+    border-bottom: 2px solid #eee;
+  }
+  
+  .sec-wrapper hr.hr-even{
+    border-bottom: 2px solid #888;
+    width: 300px;
+    margin-left: 0;
+  }
+  
+  .sec-wrapper h4{
+    font-size: 24px;
+    color: purple;
+    text-transform: uppercase;
+  }
+  
+  .sec-wrapper p{
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  ul{
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  ul li{
+    display: inline;
+    padding-right: 20px;
+  }
+  
+  ul li a{
+    color: #3e3f57;
+    font-size: 16px;
+  }
+  
+  ul li a:hover{
+    font-size: 16px;
+    text-decoration: none;
+    color: #555;
+  }
+  
+  .fa-github-square,
+  .fa-linkedin{
+    font-size: 22px;
+    color: #3e3f57;
+  }
+  
+  .footer-space{
+      margin-top: 40px;
+  }
+
+  .hide{
+      display: none;
+  }
+
+
+/* .about-bg-img{
+    background: url('/static/img/about-bg.jpg')bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.head-padding{
+    padding-top: 10%;
+}
+
+.foot-padding{
+    padding-bottom: 10%;
+}
+
+.section-about h2{
+    color: #a58fe6;
+
+}
+
+.section-about:first-child p{
+    color: #3e3e57;
+    line-height: 22px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.about-text {
+    font-size: 11px;
 }
 
 .me-section{
@@ -245,6 +386,22 @@ body{
     background-color: #3e3f5762;
     border-radius: 5px;
 }
+
+.head-foot-margin{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.hide {
+    display: none;
+}
+
+.about-content{
+    height: fit-content;
+    background-color: #3e3f5762;
+    border-radius: 5px;
+} */
+
+
 
 /* ==================== RESULTS ==================== */
 
@@ -269,6 +426,7 @@ body{
 
 .section-results .tweet-btn button{
     font-size: 14px;
+    margin-bottom: 24px;
     border-radius: 100px;
     padding: 10px 20px;
     color: #fff;
@@ -358,6 +516,11 @@ body{
     padding: 6px;
     margin: 0;
     margin-top: 20px
+}
+
+.section-results .google-line{
+    border-bottom: 1px solid lightgray;
+    width: 100%;
 }
 
 .fa-map-pin{

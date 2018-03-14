@@ -1,9 +1,11 @@
+from datetime import datetime
+
 from flask import request
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Table, Column, Integer, ForeignKey
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from datetime import datetime
+from sqlalchemy.orm import relationship
+
 Base = declarative_base()
 
 from flask_config import get_app
@@ -16,6 +18,7 @@ class User(db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     environments = relationship("Environment")
+    search_results = relationship("SearchResults")
     time_of_creation = db.Column(db.String(26))
     last_env_id = db.Column(db.Integer)
 
@@ -86,6 +89,26 @@ class CheckPoint(db.Model):
         db.session.add(self)
         db.session.commit()
 
+
+class SearchResults(db.Model):
+    __tablename__ = 'search_results'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    user_id = Column(db.Integer, ForeignKey('user.id'))
+    address = db.Column(db.String(125))
+    time_of_creation = db.Column(db.String(26))
+    value = db.Column(db.String(15))
+
+    def __init__(self, adr, user_id, val):
+        self.address = adr[:125]
+        self.value = str(val[:15])
+        self.time_of_creation = str(datetime.now())
+        self.user_id = user_id
+
+    def add_new(self):
+        db.session.add(self)
+        db.session.commit()
+
+
 class UserEnvironment:
     browser = ""
     language = ""
@@ -107,7 +130,6 @@ class UserEnvironment:
         self.version = u_a.version
         self.ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
         return self
-
 
 # class UserSession:
 #     session = ""

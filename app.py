@@ -3,7 +3,7 @@ import os
 import jinja2
 from flask import render_template, request, redirect, url_for, session
 
-from cookies_session import ChunkedSecureCookieSessionInterface
+from cookies_session import SecureCookieSessionInterface
 from data_handling import Results
 from flask_config import get_app
 from statistics import Statistics
@@ -18,7 +18,7 @@ jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), aut
 
 app = get_app()
 file = None
-app.session_interface = ChunkedSecureCookieSessionInterface()
+app.session_interface = SecureCookieSessionInterface()
 
 # ====== ROUTES ====== ###
 @app.before_request

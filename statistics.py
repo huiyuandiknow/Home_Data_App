@@ -1,19 +1,11 @@
-rom flask_sqlalchemy import SQLAlchemy
-from flask_config import get_app
-from statistics_db_model import UserEnvironment, User, Environment, CheckPoint, SearchResults, StatisticsTables
-#from coockies_session import ChunkedSecureCookieSessionInterface
-from flask import session
-# from coockies_session import ChunkedSecureCookieSessionInterface
-from flask import session
 from flask_sqlalchemy import SQLAlchemy
-
 from flask_config import get_app
 from statistics_db_model import UserEnvironment, User, Environment, CheckPoint, SearchResults, StatisticsTables
+from flask import session, render_template
 
 app = get_app()
 db = SQLAlchemy(app)
 file = None
-#app.session_interface = ChunkedSecureCookieSessionInterface()
 
 class Statistics:
 

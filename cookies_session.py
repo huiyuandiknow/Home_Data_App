@@ -3,7 +3,7 @@ from flask.sessions import SessionInterface, SessionMixin, session_json_serializ
     URLSafeTimedSerializer, total_seconds, BadSignature
 
 
-class ChunkedSecureCookieSessionInterface(SessionInterface):
+class SecureCookieSessionInterface(SessionInterface):
     """The default session interface that stores sessions in signed cookies
     through the :mod:`itsdangerous` module.
     """

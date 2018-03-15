@@ -34,6 +34,7 @@ class NegativeTest(unittest.TestCase):
         inst.driver.get(get_path().app_path)  # get the homepage
 
     def test_search_by_address_negative(self):
+        # self.driver.execute_script("alert('This is an alert');")
         res = True
         for el in self.address_bad:
             self.search_field = self.driver.find_element_by_name('address')  # find_element_by_name

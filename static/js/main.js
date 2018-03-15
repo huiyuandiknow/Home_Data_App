@@ -36,15 +36,19 @@ $(function(){
 
 
 // ============== GOOGLE MAP ============== //
-var obj = zil;
+if (typeof zil !== 'undefined'){
+    var obj = zil;
+}
+
 var lat =47.6062;
 var lng =-122.3321;
-var zilh=zil_home;
-    if (zil_home != null){
-       lat=parseFloat(zilh.full_address.latitude);
-       lng=parseFloat(zilh.full_address.longitude);
+if (typeof zil_home !== 'undefined') {
+    var zilh = zil_home;
+    if (zil_home !== null) {
+        lat = parseFloat(zilh.full_address.latitude);
+        lng = parseFloat(zilh.full_address.longitude);
     }
-
+}
 function initMap(){
 
     // Map options
@@ -52,15 +56,19 @@ function initMap(){
         zoom: 15,
          center:{lat:lat,lng:lng}
 
-    }
+    };
     
     // New map
-    var map = new google.maps.Map(document.getElementById('map'), options);
+    var mapExists = document.getElementById("map");
+    if (mapExists !== null){
+            var map = new google.maps.Map(document.getElementById('map'), options);
     var markers = [];
-    if (zil_home != null && zil != null ){
+    if (zil_home !== null && zil !== null ){
        setMarkers();
        setMarker();
     }
+    }
+
 
 
 
@@ -87,15 +95,17 @@ function initMap(){
             contentStrings.push(contentString);
             var infowindow = new google.maps.InfoWindow({
                 content: contentString});
-                console.log(obj[i].full_address.latitude)
+                console.log(obj[i].full_address.latitude);
             var curMarker = {lat: parseFloat(obj[i].full_address.latitude), lng: parseFloat(obj[i].full_address.longitude)};
             marker = new google.maps.Marker({
                 position: curMarker,
                 animation: google.maps.Animation.DROP,
                 map:map,
-                title: obj[i].name,
-                infowindow: infowindow
+                title: 'marker'+i,
+                infowindow: infowindow,
+                optimized: false
             });
+            // console.log(obj[i].name)
             marker.addListener('click', function() {
                 this.infowindow.open(map, this);
             });
@@ -125,15 +135,16 @@ function setMarker()  {
             contentStrings.push(contentString);
             var infowindow = new google.maps.InfoWindow({
                 content: contentString});
-                console.log(zilh.full_address.latitude)
+                console.log(zilh.full_address.latitude);
             var curMarker = {lat: parseFloat(zilh.full_address.latitude), lng: parseFloat(zilh.full_address.longitude)};
             marker = new google.maps.Marker({
                 position: curMarker,
                 icon: 'http://maps.google.com/mapfiles/ms/icons/'+'green'+'.png',
                 animation: google.maps.Animation.DROP,
                 map:map,
-                title: zilh.name,
-                infowindow: infowindow
+                title: 'home marker',
+                infowindow: infowindow,
+                optimized: false
             });
             marker.addListener('click', function() {
                 this.infowindow.open(map, this);
@@ -145,7 +156,8 @@ function setMarker()  {
 }
 
 //==========================twitter Button events=========================
-var home_val = res;
+if (typeof res !== 'undefined'){
+    var home_val = res;
 var tweet = document.getElementById("tweet");
 var toTweet = "My home estimate is $" + home_val + "! Find yours at https://hom-es.herokuapp.com/";
 
@@ -153,6 +165,8 @@ tweet.addEventListener("click", function () {
     var twitRL = "https://twitter.com/intent/tweet?text=" + toTweet;
    window.open(twitRL);
  });
+}
+
 
 //==========================Randomize About Me Page=========================================
 var aboutMe = $(".about");

@@ -503,7 +503,7 @@ footer .fa-github{
     }
     .search-wrapper{
         width: 300px;
-        top: 80px;
+        top: 10%;
     }
     footer span{
         display: none;
@@ -518,9 +518,13 @@ footer .fa-github{
         width: 100%;
         margin-bottom: 3px;
     }
+    .btn-group>.btn {
+        height: 42px;
+        padding: 2px 0;
+    }
     .search-bar input[type=text] {
         margin-bottom: 2px;
-        height: 46px;
+        height: 42px;
     }
     .input-liv{
         width: 100%;

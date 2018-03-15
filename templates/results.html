@@ -1,71 +1,87 @@
 {% extends 'layout.html' %}}
 
 {% block body %}
-<div class="container-fluid section-results">
+<div class="container-fluid">
     <div class="row page-bg">
-        <div class="col-lg-10 col-lg-offset-1">
-        <script type="text/javascript">
+       
+       <script type="text/javascript">
             var zil = {{zil|tojson|safe}};
             var zil_home = {{zil_home|tojson|safe}};
             var res = {{res|tojson|safe}};
         </script>
-        
-            
 
-            <div class="display-value">
-                <!-- <a href="/" class="btn btn-return btn-md btn-primary"><i class="fas fa-chevron-circle-left"></i> Return</a> -->
-                <p class="lead text-center text-uppercase">
-                    The value of your home is: <i class="fas fa-dollar-sign"></i> <span class="price"> {{res}} </span>
-                </p>
+    <section class="section-results">
+        <div class="container">
+            <div class="row">
+                    <div class="display-value">
+                        <p class="lead text-center text-uppercase">
+                            The value of your home is: <i class="fas fa-dollar-sign"></i> <span class="price"> {{res}} </span>
+                        </p>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 results-wrapper">
+                        <div class="col-md-6">
+
+                {#      <ul class="list-group">
+                            {% for result in results %}
+                                <li class="list-group-item">{{ result.price }}</li>
+                            {% endfor %}
+                        </ul>
+                #}
+                        <div class="text-results">
+                            <p class="result-details lead">Search results with property details:</p>
+                            <ul class="list-group">
+                                <li class="list-group-item">ADDRESS: <span>{{address}}</span></li>
+            {#                  <li class="list-group-item">PROPERTY TYPE: <span>{{test.bedrooms}}</span></li>#}
+                                <li class="list-group-item">NUMBER OF BEDS: {{beds}} and Baths: {{baths}}</li>
+                                <li class="list-group-item">AREA LOT: {{lot}} and LIVING: {{liv}}</li>
+                                <li class="list-group-item">YEAR: {{year}}</li>
+                                <li class="list-group-item">USED ZIP: {{zipcode}} and SOURCE: {{source}}</li>
+                            </ul>
+                            <a href="/" class="btn btn-return btn-md btn-primary"><i class="fas fa-chevron-circle-left"></i> Return</a>
+                            <div class="zillow-logo">
+                                <a href ="https://www.zillow.com/" target="_blank"><img src="http://www.zillow.com/widgets/GetVersionedResource.htm?path=/static/logos/Zillowlogo_200x50.gif" class="img-responsive"></a>
+                            </div>
+                        </div><!-- text-results -->
+                    </div><!-- col-6 -->
+
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-center img-logo">
+                        <div class="tweet-btn text-right">
+                            <button id="tweet">Log in and Tweet </button>
+                        </div>
+                        <img class="img-responsive" src="/static/img/home-app-logo.jpg">
+                    </div>
                 
-            </div>
+                    </div><!-- results-wrapper -->
 
-            <div class="well well-lg">
 
-        {#      <ul class="list-group">
-                    {% for result in results %}
-                        <li class="list-group-item">{{ result.price }}</li>
-                    {% endfor %}
-                </ul>
-        #}
-            <div class="text-results">
-                <div class="tweet-btn text-right">
-                    <a href="/" class="btn btn-return btn-md btn-primary"><i class="fas fa-chevron-circle-left"></i> Return</a>
-                    <button id="tweet">Log in and Tweet </button>
-                </div>
-                <p class="result-details text-center">Result Details:</p>
-                <hr>
-                <ul class="list-group">
-                    <li class="list-group-item">ADDRESS: <span>{{address}}</span></li>
-{#                    <li class="list-group-item">PROPERTY TYPE: <span>{{test.bedrooms}}</span></li>#}
-                    <li class="list-group-item">NUMBER OF BEDS: {{beds}} and Baths: {{baths}}</li>
-                    <li class="list-group-item">AREA LOT: {{lot}} and LIVING: {{liv}}</li>
-                    <li class="list-group-item">YEAR: {{year}}</li>
-                    <li class="list-group-item">USED ZIP: {{zipcode}} and SOURCE: {{source}}</li>
-                    <li class="list-group-item text-center"><p class="v-google"> View on Google Map <i class="fas fa-map-pin"></i></p></li>
-                    <li class="list-group-item text-center" id="map" style="height: 480px"></li>
-                </ul>
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                        <hr class="google-line">
+                        <p class="v-google lead">View similar properties on Google Map <i class="fas fa-map-pin"></i></p>
+                        <li class="list-group-item text-center" id="map" style="height: 480px"></li>
+                    </div>
 
-            </div>
+                    <!-- <script>var tweet = document.getElementById("tweet");
+                        var toTweet = "My home estimate is $" + 1000 + " Find yours at hom-es.herokuapp.com";
+                        
+                        tweet.addEventListener("click", function () {
+                            var twitRL = "https://twitter.com/intent/tweet?text=" + toTweet;
+                        window.open(twitRL);
+                        });</script> -->
 
-            <!-- <script>var tweet = document.getElementById("tweet");
-                var toTweet = "My home estimate is $" + 1000 + " Find yours at hom-es.herokuapp.com";
-                
-                tweet.addEventListener("click", function () {
-                    var twitRL = "https://twitter.com/intent/tweet?text=" + toTweet;
-                   window.open(twitRL);
-                 });</script> -->
+            </div><!-- /row -->
+        </div><!-- /container -->
 
-            </div><!-- /well -->
+        <p class="text-center zillow-terms">&copy Zillow, Inc., 2006-2016. Use is subject to <a href="https://www.zillow.com/corp/Terms.htm">Terms of Use</a>
+            <a href="https://www.zillow.com/wikipages/What-is-a-Zestimate/">What's a Zestimate?</a></p>
 
-            </div><!-- /well -->
-
-        </div><!-- row -->
-    <div><!-- row -->
-</div><!-- /container -->
+    </section>
 
 
 {#  <input type="hidden" value={{zil|tojson|safe}} id="zil" />#}
 {#  <input type="hidden" value={{flag}} id="flag" />#}
+
+    </div><!-- / row -->
+</div><!-- / container -->
 
 {% endblock %}

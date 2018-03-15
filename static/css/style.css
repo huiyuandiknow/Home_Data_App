@@ -155,8 +155,11 @@ body{
 .dropdown-menu>li>a{
     padding: 4px 10px;
 }
-.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark{
-    margin-top: 10px;
+.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
+    position: relative;
+    display: inline-block;
+    right: -15px;
+    margin-top: 5px;
     color: #A593E0;
 }
 .bootstrap-select .btn:focus {
@@ -185,7 +188,7 @@ body{
 }
 /* ==================== ABOUT ==================== */
 .sec-about h2{
-    padding-top: 100px;
+    padding-top: 70px;
     color: #855595;
   }
   .sec-about .mobile-view{
@@ -235,13 +238,13 @@ body{
     color: purple;
   }
   .sec-wrapper hr{
-    width: 310px;
+    width: 280px;
     margin-left: 0;
     border-bottom: 2px solid #eee;
   }
   .sec-wrapper hr.hr-even{
     border-bottom: 2px solid #888;
-    width: 310px;
+    width: 280px;
     margin-left: 0;
   }
   .sec-wrapper h4{
@@ -319,6 +322,9 @@ body{
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     --moz--box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     --webkit--box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.section-results .display-value br{
+    display: none;
 }
 .section-results .price{
     color: #a591e3;
@@ -399,6 +405,9 @@ body{
 .zillow-terms{
     margin-top: 40px;
 }
+.zillow-terms br{
+    display: none;
+}
 /* ==================== FOOTER ==================== */
 footer{
     position: fixed;
@@ -418,27 +427,32 @@ footer .fa-github{
 }
 /*********************** MEDIA QUERIES ************************/
 
-@media screen and (max-width: 760px ){
-
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+    
     .search-wrapper h1{
-        font-size: 46px;
+        font-size: 55px;
     }
     .search-wrapper{
-        width: 530px;
+        width: 640px;
         top: 20%;
     }
     .search-bar input[type=text]{
-        margin-bottom: 4px;
-        height: 44px;
+        margin-bottom: 2px;
+        height: 42px;
     }
     .search-btn input[type=submit]{
-        width: 135px;
+        width: 163px;
         margin-top: -2px;
         font-size: 16px;
         padding: 8px 20px 8px 20px;
+        right: 1px;
     }
     .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
-        width: 128px;
+        width: 155px;
     }
     .dropdown-menu>li>a{
         padding: 2px 0px;
@@ -453,100 +467,19 @@ footer .fa-github{
         width: 49%;
     }
     .input-lot {
-        width: 50%;
-    }
-}
-
-@media screen and (max-width: 560px ){
-
-    .search-wrapper h1{
-        font-size: 40px;
-    }
-    .search-wrapper{
-        width: 460px;
-        top: 160px;
-    }
-    .search-bar input[type=text]{
-        margin-bottom: 4px;
-        height: 44px;
-    }
-    .search-btn input[type=submit]{
-        width: 100%;
-        position: relative;
-        margin-top: 0px;
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-    .btn-group>.btn{
-        margin-bottom: 4px;
-    }
-    .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
-        width: 100%;
-    }
-    .dropdown-menu{
-        margin-top: -2px;
-    }
-    .dropdown-menu>li>a{
-        padding: 2px;
-        text-align: center;
-    }
-    .bootstrap-select.btn-group .dropdown-toggle .filter-option,
-    .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text{
-        font-size: 14px;
-        height: 26px;
-        text-align: center;
-    }
-    .sec-about .tools-used {
-        margin-top: 60px;
-    }
-}
-
-@media screen and (max-width: 414px ){
-
-    .search-wrapper h1{
-        font-size: 32px;
-    }
-    h1 br{
-        display: none;
-    }
-    .search-wrapper{
-        width: 340px;
-        top: 110px;
-    }
-    footer span{
-        display: none;
-    }
-    .input-liv{
-        width: 100%;
+        width: 50.3%;
     }
     
-    .input-lot {
-        width: 100%;
-        margin-left: 0px;
-    }
-    .dropdown-menu>li>a {
-        padding: 2px 0px 2px 18px;
-        text-align: left;
-    }
-    .sec-about .mobile-view{
-        display: none;
-    } 
-    
 }
 
-@media screen and (max-width: 375px ){
 
-    .search-wrapper h1{
-        font-size: 30px;
-    }
-    .search-wrapper{
-        width: 280px;
-        top: 60px;
-    }
-    footer span{
-        display: none;
-    }
-    .navbar-brand .fa-home {
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+
+     .navbar-brand .fa-home {
         font-size: 22px;
         color: #fff;
         background: none;
@@ -555,12 +488,55 @@ footer .fa-github{
     .navbar-brand .brand-title {
         position: relative;
         top: 2px;
-        left: -46px;
+        left: -45px;
         color: #fff;
         font-size: 24px;
     }
+    .search-wrapper h1{
+        font-size: 32px;
+    }
+    h1 br{
+        display: none;
+    }
+    .section-results .display-value .lead br{
+        display: block;
+    }
+    .search-wrapper{
+        width: 300px;
+        top: 80px;
+    }
+    footer span{
+        display: none;
+    }
+    .search-btn input[type=submit] {
+        width: 100%;
+        top: 99.9%;
+        font-size: 16px;
+        padding: 10px 20px 10px 20px;
+    }
+    .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: 100%;
+        margin-bottom: 3px;
+    }
+    .search-bar input[type=text] {
+        margin-bottom: 2px;
+        height: 46px;
+    }
     .input-liv{
         width: 100%;
+    }
+    .section-results{
+        padding-top: 0;
+    }
+    .section-results .lead{
+        font-size: 20px;
+    }
+    .section-results .tweet-btn button {
+        padding: 10px 90px;
+    }
+    .tweet-btn{
+        text-align: center;
+        margin-top: 30px;
     }
     .input-lot {
         width: 100%;
@@ -570,16 +546,19 @@ footer .fa-github{
         padding: 2px 0px 2px 18px;
         text-align: left;
     }
-    .img-profile img{
-        margin: 5px auto;
-        width: 200px;
-        margin-bottom: 20px;
-    }
-    .col-md-8{
-        padding-left: 15px;
+    .sec-about .mobile-view{
+        display: block;
     }
     .sec-wrapper{
         text-align: center;
+    }
+    .sec-wrapper h4{
+        font-size: 22px;
+    }
+    .sec-wrapper hr,
+    .sec-wrapper hr.hr-even{
+        width: 80%;
+        margin: 20px auto;
     }
     .aboutP,
     .sec-about .about-icons{
@@ -588,9 +567,33 @@ footer .fa-github{
     .sec-about .mobile-view{
         display: block;
     } 
+    .img-profile img{
+        margin: 5px auto;
+        width: 200px;
+        margin-bottom: 20px;
+    }
+    .social-icons{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .social-icons>ul>li>a {
+        font-size: 20px;
+    }
     .our-team h2{
         padding-top: 0;
       }
-
+    .google-map{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .container-fluid .page-bg{
+        background-image: none;
+    }
+    .zillow-terms br{
+        display: block;
+    }
+    .col-md-8 {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
-

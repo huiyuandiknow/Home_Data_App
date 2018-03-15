@@ -11,6 +11,8 @@ $(function(){
     $('.bg-fader').css('background-size', 'cover');
     $('.bg-fader').css('background-position', 'center');
     $('.bg-fader').css('background-repeat', 'no-repeat');
+    $('.bg-fader').css('hight', '100%');
+
     
     setInterval(function(){
         bgImg.fadeOut(2000, function(){

@@ -147,7 +147,7 @@ class StatisticsTables:
         return result
     @staticmethod
     def get_searches():
-        q = db.engine.execute("SELECT address, count(DISTINCT user_id), AVG(value) FROM `search_results` WHERE 1 GROUP BY address ORDER BY count(DISTINCT user_id) DESC;")
+        q = db.engine.execute("SELECT address, count(user_id), AVG(value) FROM `search_results` WHERE 1 GROUP BY address ORDER BY count(user_id) DESC LIMIT 10;")
         result = []
         for row in q:
             result.append(row)

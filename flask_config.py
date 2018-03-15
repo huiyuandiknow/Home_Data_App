@@ -5,7 +5,7 @@ from helper import dec
 
 
 def get_app():
-    app = Flask(__name__)
+    app = Flask(__name__, static_url_path='/static')
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://user1:' + dec(
         'Nm7CVLX6fVhlA4kS') + '@67.215.253.70:3306/user1db1'
     # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://user1db1:123456@localhost:8889/user1db1'
@@ -17,4 +17,5 @@ def get_app():
     app.secret_key = 'homeapp'
     app.permanent_session_lifetime = 18000000
     app.session_cookie_name = "home_app"
+
     return app

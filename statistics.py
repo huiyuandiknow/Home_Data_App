@@ -1,8 +1,14 @@
-from flask_sqlalchemy import SQLAlchemy
+rom flask_sqlalchemy import SQLAlchemy
 from flask_config import get_app
-from statistics_db_model import UserEnvironment, User, Environment, CheckPoint, SearchResults
+from statistics_db_model import UserEnvironment, User, Environment, CheckPoint, SearchResults, StatisticsTables
 #from coockies_session import ChunkedSecureCookieSessionInterface
-from flask import session, render_template
+from flask import session
+# from coockies_session import ChunkedSecureCookieSessionInterface
+from flask import session
+from flask_sqlalchemy import SQLAlchemy
+
+from flask_config import get_app
+from statistics_db_model import UserEnvironment, User, Environment, CheckPoint, SearchResults, StatisticsTables
 
 app = get_app()
 db = SQLAlchemy(app)
@@ -112,5 +118,19 @@ class Statistics:
                 session['id'] = Statistics.handle_page(page, None, current_env)
             else:
                 session['id'] = Statistics.handle_res_page(None, current_env, adr, val)
+
+    @staticmethod
+    def get_stats():
+        stats = []
+        stats.append(StatisticsTables.get_hits_users())
+        stats.append(StatisticsTables.get_searches())
+        # bbb = stat.get_hits_uniq_users()
+        # ccc = stat.get_hits_users()
+        # print(bbb)
+        # print(bbb[0])
+        # print(bbb[0][1])
+        return stats
+
+
         #response = render_template(template)
         #return response

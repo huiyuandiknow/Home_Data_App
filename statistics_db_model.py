@@ -115,7 +115,6 @@ class UserEnvironment:
     platform = ""
     user_agent_string = ""
     version = ""
-    #time =""
     ip=""
 
     def __init__(self):
@@ -131,50 +130,28 @@ class UserEnvironment:
         self.ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
         return self
 
-# class UserSession:
-#     session = ""
-#     def __init__(self, sess):
-#         self.session = sess
-#         self.register_time = str(datetime.now())
-#
-#
-# # class User:  #probably user session
-# #     id =""
-# #     register_time = ""
-# #
-# #     def __init__(self):
-# #         self.register_time = str(datetime.now())
-#
-#
-# class HomepageLoad:
-#     load_time = ""
-#
-#     def __init__(self):
-#         self.load_time = str(datetime.now())
-#
-#
-# class ResultsPageLoad:
-#     load_time = ""
-#
-#     def __init__(self):
-#         self.load_time = str(datetime.now())
-#
-#
-# class UserSearch:
-#     load_time = ""
-#
-#     def __init__(self, address, living, beds, baths, lot, year, data, val, source):
-#         self.load_time = str(datetime.now())
-#         self.address = address
-#         self.living = living
-#         self.beds = beds
-#         self.baths = baths
-#         self.lot = lot
-#         self.year = year
-#         self.load_time = str(datetime.now())
-
-
-
+class StatisticsTables:
+    @staticmethod
+    def get_hits_uniq_users():
+        q = db.engine.execute("SELECT page, count(DISTINCT env_id) FROM `check_point` WHERE 1 GROUP BY page")
+        result = []
+        for row in q:
+            result.append(row)
+        return result
+    @staticmethod
+    def get_hits_users():
+        q = db.engine.execute("SELECT page, count(DISTINCT env_id), count(env_id) FROM `check_point` WHERE 1 GROUP BY page ORDER BY count(DISTINCT env_id) DESC;")
+        result = []
+        for row in q:
+            result.append(row)
+        return result
+    @staticmethod
+    def get_searches():
+        q = db.engine.execute("SELECT address, count(DISTINCT user_id), AVG(value) FROM `search_results` WHERE 1 GROUP BY address ORDER BY count(DISTINCT user_id) DESC;")
+        result = []
+        for row in q:
+            result.append(row)
+        return result
 
 
 

@@ -1,9 +1,20 @@
+import os
+
+import jinja2
 from flask import render_template, request, redirect, url_for, session
 
 from cookies_session import ChunkedSecureCookieSessionInterface
 from data_handling import Results
 from flask_config import get_app
 from statistics import Statistics
+
+#import sys #debug
+
+
+
+template_dir = os.path.join(os.path.dirname(__file__), 'templates')
+jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
+
 
 app = get_app()
 file = None
@@ -68,7 +79,16 @@ def show_results():
 def about():
     # return Statistics.set_stats('ab', 'about.html', None, None)
     Statistics.set_stats('ab', 'about.html', None, None)
+    #Statistics.get_stats()
     return render_template('about.html')
+# Stats Page
+
+@app.route('/stats')
+def stats():
+    Statistics.set_stats('st', 'stats.html', None, None)
+    res = Statistics.get_stats()
+    template = jinja_env.get_template('stats.html')
+    return template.render(list1=res[0], list2=res[1])
 
 
 if __name__ == '__main__':

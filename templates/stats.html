@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Estimate Web App</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.css" rel="stylesheet" >
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+    <!-- Include navbar on all pages -->
+    {% include 'includes/_navbar.html' %} 
+
+
+    <div class="container-fluid">
+<div class="container-fluid section-results">
+    <div class="row page-bg">
+        <div class="col-lg-10 col-lg-offset-1">
+{#        <script type="text/javascript">#}
+{#            var zil = {{zil|tojson|safe}};#}
+{#            var zil_home = {{zil_home|tojson|safe}};#}
+{#            var res = {{res|tojson|safe}};#}
+{#        </script>#}
+
+
+
+            <div class="display-value">
+                <!-- <a href="/" class="btn btn-return btn-md btn-primary"><i class="fas fa-chevron-circle-left"></i> Return</a> -->
+                <p class="lead text-center text-uppercase">
+                    Statistics
+                </p>
+
+            </div>
+
+            <div class="well well-lg">
+
+        {#      <ul class="list-group">
+                    {% for result in results %}
+                        <li class="list-group-item">{{ result.price }}</li>
+                    {% endfor %}
+                </ul>
+        #}
+            <div class="text-results">
+
+                <hr>
+                <ul class="list-group">
+
+                       <li  class="list-group-item">
+                       <p class="result-details text-center"><strong>               Hits, pages and users</strong></p>
+                        <table style="width:100%">
+                            <tr>
+                            <th>     Hits        </th>
+                            <th>   unique users</th>
+                            <th>    page name</th>
+                            </tr>
+
+                        {% for row in list1 %}
+                          <tr>
+                            <td>{{ row[2] }}</td>
+                            <td>{{ row[1] }}</td>
+                            <td>{{ row[0] }}</td>
+                          </tr>
+                        {% endfor %}
+                        </table>
+                       </li>
+
+                        <li  class="list-group-item">
+                       <p class="result-details text-center"><strong>Search queries and results </strong></p>
+                        <table style="width:100%">
+                            <tr>
+                            <th>     Search queries        </th>
+                            <th>   Search number volume</th>
+                            <th>    Result(value)</th>
+                            </tr>
+
+                        {% for row in list2 %}
+                          <tr>
+                            <td>{{ row[0] }}</td>
+                            <td>{{ row[1] }}</td>
+                            <td>{{ row[2] }}</td>
+                          </tr>
+                        {% endfor %}
+                        </table>
+                       </li>
+
+                </ul>
+
+            </div>
+
+            </div><!-- /well -->
+
+            </div><!-- /well -->
+
+        </div><!-- row -->
+    <div><!-- row -->
+</div><!-- /container -->
+
+    </div>
+    </div>
+
+    <!-- Include Footer on all pages -->
+    {% include 'includes/_footer.html' %}
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+     
+
+</body>
+</html>

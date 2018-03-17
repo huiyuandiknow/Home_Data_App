@@ -64,6 +64,9 @@ body{
     left: 50%;
     transform: translateX(-50%);
 }
+.search-wrapper img{
+    display: none;
+}
 .search-wrapper p{
     color: #eee;
 }

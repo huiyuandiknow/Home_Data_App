@@ -31,7 +31,12 @@ class KcTest(unittest.TestCase):
         time.sleep(4)
         self.driver.set_window_size(600, 1080)
         time.sleep(4)
-        self.driver.maximize_window()
+
+        self.driver.set_window_size(350, 1080)
+        time.sleep(4)
+        self.driver.execute_script("window.scrollTo(0, 440)")
+        time.sleep(4)
+        #self.driver.maximize_window()
 
         for el in self.address_good_KC:
             self.search_field = self.driver.find_element_by_name('address')  # find_element_by_name
@@ -42,6 +47,9 @@ class KcTest(unittest.TestCase):
             self.driver.set_window_size(1000, 1080)
             time.sleep(4)
             self.driver.set_window_size(600, 1080)
+            time.sleep(4)
+            self.driver.set_window_size(350, 1080)
+            self.driver.execute_script("window.scrollTo(0, 440)")
             time.sleep(4)
             self.driver.maximize_window()
             flag = True
@@ -69,28 +77,44 @@ class KcTest(unittest.TestCase):
         time.sleep(10)
         # self.search_field.send_keys(el)  # input address
         # self.search_field.submit()  # press search
+        self.driver.find_element_by_link_text('Statistics').click()
+        self.driver.execute_script("window.scrollTo(0, 540)")
+        time.sleep(12)
         self.driver.find_element_by_link_text('About').click()
-        time.sleep(10)
+        time.sleep(4)
+        self.driver.execute_script("window.scrollTo(0, 540)")  # scroll down
+        time.sleep(4)
+        self.driver.execute_script("window.scrollTo(0, 740)")  # scroll down
+        time.sleep(4)
+        self.driver.execute_script("window.scrollTo(0, 940)")  # scroll down
+        time.sleep(4)
+        self.driver.execute_script("window.scrollTo(0, 1180)")  # scroll down
+        time.sleep(4)
+        self.driver.execute_script("window.scrollTo(0, 1480)")  # scroll down
+        time.sleep(4)
+        self.driver.execute_script("window.scrollTo(0, 1880)")  # scroll down
+        time.sleep(4)
+        self.driver.execute_script("window.scrollTo(0, 2080)")  # scroll down
         self.driver.set_window_size(1000, 1080)
         time.sleep(4)
         self.driver.set_window_size(600, 1080)
         time.sleep(7)
         self.driver.maximize_window()
-        self.driver.execute_script("window.scrollTo(0, 540)")  # scroll down
         time.sleep(4)
         self.driver.set_window_size(1000, 1080)
         time.sleep(9)
         self.driver.set_window_size(600, 1080)
         time.sleep(9)
-        self.driver.maximize_window()
-        self.driver.execute_script("window.scrollTo(0, 840)")  # scroll down
+        self.driver.execute_script("window.scrollTo(0, 940")  # scroll down
         time.sleep(9)
-        self.driver.find_element_by_link_text('Statistics').click()
-        self.driver.execute_script("window.scrollTo(0, 540)")
-        time.sleep(12)
+        self.driver.execute_script("window.scrollTo(0, 940")  # scroll down
+        time.sleep(9)
+        self.driver.maximize_window()
+        time.sleep(9)
+
 
             # self.driver.find_element_by_css_selector("div[title='marker1']").click()
-        self.assertTrue(res)
+        # self.assertTrue(res)
 
     def test_search_by_zip_KC(self):
         res = True
@@ -119,7 +143,7 @@ class KcTest(unittest.TestCase):
                     res = False
                     break
         time.sleep(12)
-        self.assertTrue(res)
+        # self.assertTrue(res)
 
 
 

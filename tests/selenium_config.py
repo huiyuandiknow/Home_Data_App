@@ -6,5 +6,5 @@ app_path = "http://127.0.0.1:5000/"
 
 
 def get_path():
-    path = SeleniumConfig(crome_path, webdriver_path, app_path="http://127.0.0.1:5000/")
+    path = SeleniumConfig(crome_path, webdriver_path, app_path="https://hom-es.herokuapp.com/")
     return path

@@ -117,6 +117,7 @@ class UserEnvironment:
     version = ""
     ip=""
 
+
     def __init__(self):
         self.ip = ""
 
@@ -130,7 +131,14 @@ class UserEnvironment:
         self.ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
         return self
 
+
 class StatisticsTables:
+    page_names = {
+        "ab": "about",
+        "st": "statistics",
+        "rt": "results",
+        "hp": "homepage"
+    }
     @staticmethod
     def get_hits_uniq_users():
         q = db.engine.execute("SELECT page, count(DISTINCT env_id) FROM `check_point` WHERE 1 GROUP BY page")
@@ -138,20 +146,34 @@ class StatisticsTables:
         for row in q:
             result.append(row)
         return result
+
     @staticmethod
     def get_hits_users():
         q = db.engine.execute("SELECT page, count(DISTINCT env_id), count(env_id) FROM `check_point` WHERE 1 GROUP BY page ORDER BY count(DISTINCT env_id) DESC;")
         result = []
         for row in q:
-            result.append(row)
+            a = row[1:]
+            b = (StatisticsTables.page_names[row[0]],)
+            result.append(b+a)
         return result
+
     @staticmethod
     def get_searches():
-        q = db.engine.execute("SELECT address, count(user_id), AVG(value) FROM `search_results` WHERE 1 GROUP BY address ORDER BY count(user_id) DESC LIMIT 10;")
+        q = db.engine.execute(
+            "SELECT address, count(user_id), ROUND(AVG(value),0) FROM `search_results` WHERE 1 GROUP BY address ORDER BY count(user_id) DESC LIMIT 10;")
         result = []
         for row in q:
-            result.append(row)
+            e = row[0][:40]
+            d = row[1]
+            a = (e,) + (d,)
+            try:
+                d = int(round(row[2], 0))
+            except:
+                d = 0
+            b = (d,)
+            result.append(a+b)
         return result
+
 
 
 

@@ -116,11 +116,6 @@ class Statistics:
         stats = []
         stats.append(StatisticsTables.get_hits_users())
         stats.append(StatisticsTables.get_searches())
-        # bbb = stat.get_hits_uniq_users()
-        # ccc = stat.get_hits_users()
-        # print(bbb)
-        # print(bbb[0])
-        # print(bbb[0][1])
         return stats
 
 

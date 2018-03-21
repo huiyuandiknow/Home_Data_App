@@ -1,14 +1,35 @@
-from flask import render_template, request, redirect, url_for
+import os
+
+import jinja2
+from flask import render_template, request, redirect, url_for, session
+
+from cookies_session import SecureCookieSessionInterface
 from data_handling import Results
 from flask_config import get_app
+from statistics import Statistics
+
+#import sys #debug
+
+
+
+template_dir = os.path.join(os.path.dirname(__file__), 'templates')
+jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
+
 
 app = get_app()
-# ====== ROUTES ====== ###
+file = None
+app.session_interface = SecureCookieSessionInterface()
 
+# ====== ROUTES ====== ###
+@app.before_request
+def make_session_permanent():
+    session.permanent = True
 
 # Index Page
 @app.route('/')
 def index():
+    # return Statistics.set_stats('hp', 'home.html', None, None)
+    Statistics.set_stats('ab', 'home.html', None, None)
     return render_template('home.html')
 
 
@@ -16,13 +37,16 @@ def index():
 # It requests a data from the form on the home page and renders a results page
 @app.route('/results', methods=['GET', 'POST'])
 def show_results():
+
     zil = ""
     zil_home = ""
+
     try:
         address = request.form['address']
     except:
         return redirect(url_for('index'))
-    #address = '8105 SE Henderson St Portland, OR 97206'
+    # address = ''
+
     beds = request.form['beds'].replace('Bed: ', '')
     baths = request.form['baths'].replace('Bath: ', '')
     living = request.form['living']
@@ -41,32 +65,31 @@ def show_results():
     else:
         zil_home = None
         zil = None
-    return render_template('results.html', res=data.val, beds=data.beds,
+    Statistics.set_stats('rt', 'results.html', address, str(data.val))
+    response = render_template('results.html', res=data.val, beds=data.beds,
                            baths=data.baths, source=source, address=address, lot=data.lot,
                            liv=data.living, zipcode=data.home_zip, year=data.year, zil=zil, zil_home=zil_home)
+
+    return response
+
 
 
 # About Page
 @app.route('/about')
 def about():
+    # return Statistics.set_stats('ab', 'about.html', None, None)
+    Statistics.set_stats('ab', 'about.html', None, None)
+    #Statistics.get_stats()
     return render_template('about.html')
+# Stats Page
 
-# @app.route('/test')
-# def test():
-#
-#     return render_template('home_test.html')
-#
-# @app.route('/test_results', methods=['GET', 'POST'])
-# def test_res():
-#     #address = '1309 Harrington Ave SE, Renton, WA 98058'
-#     addr = request.form['address']
-#     res = ''
-#     #for key, val in addr[0].items():
-#     #    if key == "ZipCode":
-#     #        res = val
-#
-#     #return render_template('test_results.html', res=res)
-#     return render_template('test_results.html', res=zillow_api(addr))
+@app.route('/stats')
+def stats():
+    Statistics.set_stats('st', 'stats.html', None, None)
+    res = Statistics.get_stats()
+    template = jinja_env.get_template('stats.html')
+    return template.render(list1=res[0], list2=res[1])
+
 
 if __name__ == '__main__':
     app.run()

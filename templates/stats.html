@@ -20,7 +20,7 @@
     {% include 'includes/_navbar.html' %} 
 
 
-    <div class="container-fluid">
+<div class="container-fluid">
 <div class="container-fluid section-results">
     <div class="row page-bg">
         <div class="col-lg-10 col-lg-offset-1">
@@ -30,14 +30,11 @@
 {#            var res = {{res|tojson|safe}};#}
 {#        </script>#}
 
-
-
             <div class="display-value">
                 <!-- <a href="/" class="btn btn-return btn-md btn-primary"><i class="fas fa-chevron-circle-left"></i> Return</a> -->
                 <p class="lead text-center text-uppercase">
                     Statistics
                 </p>
-
             </div>
 
             <div class="well well-lg">
@@ -49,17 +46,15 @@
                 </ul>
         #}
             <div class="text-results">
-
-                <hr>
+        
                 <ul class="list-group">
-
                        <li  class="list-group-item">
-                       <p class="result-details text-center"><strong>               Hits, pages and users</strong></p>
+                       <p class="result-details text-center text-uppercase"><strong>Requestes, Pages and Users</strong></p>
                         <table style="width:100%">
                             <tr>
-                            <th>     Hits        </th>
-                            <th>   unique users</th>
-                            <th>    page name</th>
+                            <th>Requestes</th>
+                            <th>Unique Users</th>
+                            <th>Page Name</th>
                             </tr>
 
                         {% for row in list1 %}
@@ -73,12 +68,12 @@
                        </li>
 
                         <li  class="list-group-item">
-                       <p class="result-details text-center"><strong>Search queries and results </strong></p>
+                       <p class="result-details text-center text-uppercase"><strong>Search Queries and Results </strong></p>
                         <table style="width:100%">
                             <tr>
-                            <th>     Search queries        </th>
-                            <th>   Search number volume</th>
-                            <th>    Result(value)</th>
+                            <th>Search Queries</th>
+                            <th>Search Number Volume</th>
+                            <th>Result(value)</th>
                             </tr>
 
                         {% for row in list2 %}

@@ -411,6 +411,19 @@ body{
 .zillow-terms br{
     display: none;
 }
+
+/* ==================== STATISTICS ==================== */
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.section-results .text-results ul li {
+    padding-bottom: 40px;
+}
+
 /* ==================== FOOTER ==================== */
 footer{
     position: fixed;
@@ -474,7 +487,6 @@ footer .fa-github{
     }
     
 }
-
 
 /* 
   ##Device = Most of the Smartphones Mobiles (Portrait)

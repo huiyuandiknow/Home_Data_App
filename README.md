@@ -30,4 +30,8 @@ Zillow API.
 Estimator Function.
 Twitter Button Implementation.
 
-## Web App Screenshots
+## Technologies used
+
+Python, Flask, HTML, CSS, Bootstrap, Javascript, jQuery, , Google Maps API, Zillow API, Heroku.
+
+

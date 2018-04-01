@@ -22,6 +22,7 @@ except ImportError:
             try:
                 df = pd.read_csv(abs_file_path)
                 print("Main dataset has {} samples with {} features each.".format(*df.shape))
+                print ("import error")
             except:
                 print("Dataset could not be loaded. Is the dataset missing?")
 
@@ -88,7 +89,9 @@ else:
                 scale_pos_weight=1,
                 seed=100)
             xgb2.fit(df_train[predictors], df_train['price'], eval_metric='rmse')
+            print ("fitted")
             pickle.dump(xgb2, open(os.path.join(script_dir, model_filename), 'wb'))
+            print("fitted")
         idm = 10000
         my_data2 = pd.DataFrame.from_records([{'id': idm, 'bedrooms': beds, 'bathrooms': baths, 'sqft_living': living,
                                                'sqft_lot': lot, 'zipcode': h_zip, 'year': year}])

@@ -29,7 +29,7 @@ def make_session_permanent():
 @app.route('/')
 def index():
     # return Statistics.set_stats('hp', 'home.html', None, None)
-    Statistics.set_stats('ab', 'home.html', None, None)
+    Statistics.set_stats('hp', 'home.html', None, None)
     return render_template('home.html')
 
 

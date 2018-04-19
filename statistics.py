@@ -7,6 +7,7 @@ app = get_app()
 db = SQLAlchemy(app)
 file = None
 
+
 class Statistics:
 
     @staticmethod
@@ -95,6 +96,19 @@ class Statistics:
     def set_stats(page, template, adr, val):
         environment = UserEnvironment()
         current_env = environment.get_current_user_environment()
+        if current_env.version is None:
+            current_env.version = 'None'
+        if current_env.user_agent_string is None:
+            current_env.user_agent_string = 'None'
+        if current_env.platform is None:
+            current_env.platform = 'None'
+        if current_env.language is None:
+            current_env.language = 'None'
+        if current_env.browser is None:
+            current_env.browser = 'None'
+        if current_env.ip is None:
+            current_env.ip = 'None'
+
         try:
             user_id = session['id']
             if val is None:
@@ -107,7 +121,9 @@ class Statistics:
                     session['id'] = u
         except:
             if val is None:
+
                 session['id'] = Statistics.handle_page(page, None, current_env)
+
             else:
                 session['id'] = Statistics.handle_res_page(None, current_env, adr, val)
 

@@ -14,3 +14,20 @@ This is a clean, easy to use, user friendly, mobile friendly, responsive Web App
 
 ## Project TF
 - [Kate Boston](https://github.com/ktlnbstn)
+
+## Project Scope
+
+Includes:
+Search the entire U.S.
+King County
+
+Does Not Include:
+Markets outside of the U.S.
+
+Deliverables/Features:
+Google Maps API.
+Zillow API.
+Estimator Function.
+Twitter Button Implementation.
+
+## Web App Screenshots

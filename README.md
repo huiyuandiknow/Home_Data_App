@@ -3,7 +3,7 @@
 
 # Home Estimate App
 
-This is a clean, easy to use, user friendly, mobile friendly, responsive Web App that aggregates housing data to recommend whether to sell or rent your house in the current real estate market.
+This is a clean, easy to use, user friendly, mobile friendly, responsive Web App that aggregates housing data to estimate a value of your house in the current real estate market.
 
 ## Collaborators
 

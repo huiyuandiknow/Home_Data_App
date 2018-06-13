@@ -5,6 +5,7 @@ import pandas as pd
 from sklearn import metrics  # Additional scklearn functions
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
+import sys
 #from xgboost import XGBRegressor
 try:
     from xgboost import XGBRegressor
@@ -54,6 +55,7 @@ else:
         script_dir = os.path.dirname(__file__)  # <-- absolute dir the script is in
         model_filename = 'data/finalized_model.sav'
         predictors = ['bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'zipcode', 'year']
+        print("Python version: " + sys.version)
         try:
             xgb2 = pickle.load(open(os.path.join(script_dir, model_filename), 'rb'))
             print('model is loaded')

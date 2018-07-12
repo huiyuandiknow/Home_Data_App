@@ -36,3 +36,7 @@ Twitter Button Implementation.
 ## NEW Concept 2018 UI/UX Design Screenshots
 ![home estimate new concept landing page](https://user-images.githubusercontent.com/26147765/42605970-a4e411ee-852f-11e8-951d-c24f32c4cb3b.jpg)
 
+![home estimate new concept results page](https://user-images.githubusercontent.com/26147765/42620604-3ce09068-8570-11e8-9427-096ff2f2348f.jpg)
+
+
+

@@ -34,4 +34,5 @@ Twitter Button Implementation.
 ![screen1](https://user-images.githubusercontent.com/26147765/41816725-1258ae30-7741-11e8-83fb-03b22d7a9fc4.png)
 
 ## NEW Concept 2018 UI/UX Design Screenshots
-![home estimate new concept](https://user-images.githubusercontent.com/26147765/42468094-b552f7ac-8368-11e8-83c5-37bc5ee6dde8.jpg)
+![home estimate new concept landing page](https://user-images.githubusercontent.com/26147765/42605970-a4e411ee-852f-11e8-951d-c24f32c4cb3b.jpg)
+
